@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension ThemeObserver where Self: UIViewController {
-    public func observeThemeUpdates() {
-        NotificationCenter.default.addObserver(forName: MainThemeManager.themeUpdateNotificationName,
+public extension ThemeObserver {
+    func observeThemeUpdates() {
+        NotificationCenter.default.addObserver(forName: AbraThemeManager.themeUpdateNotificationName,
                                                object: nil,
                                                queue: .main) { [weak self] _ in
             self?.updateTheme()

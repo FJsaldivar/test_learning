@@ -8,7 +8,7 @@
 import UIKit
 import UalaUI
 
-protocol answerSelectionProtocol: AnyObject {
+protocol AnswerSelectionProtocol: AnyObject {
     func selected(answer: AnswerChoice?)
 }
 
@@ -17,7 +17,7 @@ class AnswerTableViewCell: UITableViewCell {
     @IBOutlet weak var radioButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    weak var delegate: answerSelectionProtocol?
+    weak var delegate: AnswerSelectionProtocol?
     var answer: AnswerChoice?
     
     override func awakeFromNib() {

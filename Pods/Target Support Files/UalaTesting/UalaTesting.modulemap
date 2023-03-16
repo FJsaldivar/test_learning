@@ -1,0 +1,6 @@
+framework module UalaTesting {
+  umbrella header "UalaTesting-umbrella.h"
+
+  export *
+  module * { export * }
+}

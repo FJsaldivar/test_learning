@@ -44,6 +44,7 @@ public struct ConfigurationKey: ConfigurationKeyImpl {
     static let amazonS3BucketName = ConfigurationKey(rawValue: "S3_BUCKET_NAME")
 
     public static let baseUrlDebit = ConfigurationKey(rawValue: "BASE_URL_DEBIT")
+    public static let baseUrlTransactional = ConfigurationKey(rawValue: "BASE_URL_TRANSACTIONAL")
     public static let baseUrlFreezeCol = ConfigurationKey(rawValue: "BASE_URL_FREEZE")
     public static let baseUrlCard = ConfigurationKey(rawValue: "BASE_URL_CARD_DEBIT")
     public static let baseUrlSignUp = ConfigurationKey(rawValue: "BASE_URL_SIGN_UP")
@@ -81,4 +82,10 @@ public struct ConfigurationKey: ConfigurationKeyImpl {
     
     // MARK: CASHOUT
     public static let cashoutBaseUrl = ConfigurationKey(rawValue: "CASHOUT_BASE_PATH")
+    
+    // MARK: DEBIN CASHIN
+    public static let cashinDebintBaseUrl = ConfigurationKey(rawValue: "BASE_URL_TRANSACTIONAL")
+    
+    // MARK: CARD ON DEMAND ARG
+    public static let cardOnDemandARGBaseUrl = ConfigurationKey(rawValue: "BASE_URL_CARDONDEMAND_ARG")
 }

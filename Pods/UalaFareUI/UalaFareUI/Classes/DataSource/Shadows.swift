@@ -23,7 +23,7 @@ public enum Shadows: ShadowsProtocol, CaseIterable {
         switch self {
         case .shadowSm:
             return ShadowAttributes(
-                color: MainThemeManager.shared.globalColor(for: .paletteGrey70).withAlphaComponent(0.3),
+                color: AbraThemeManager.theme.globalColor(for: .paletteGrey70).withAlphaComponent(0.3),
                 xCoordinate: 0,
                 yCoordinate: 2,
                 blur: 8,
@@ -31,7 +31,7 @@ public enum Shadows: ShadowsProtocol, CaseIterable {
             
         case .shadowMd:
             return ShadowAttributes(
-                color: MainThemeManager.shared.globalColor(for: .paletteGrey70),
+                color: AbraThemeManager.theme.globalColor(for: .paletteGrey70),
                 xCoordinate: 0,
                 yCoordinate: 4,
                 blur: 16,
@@ -39,7 +39,7 @@ public enum Shadows: ShadowsProtocol, CaseIterable {
             
         case .shadowLg:
             return ShadowAttributes(
-                color: MainThemeManager.shared.globalColor(for: .paletteGrey70).withAlphaComponent(0.3),
+                color: AbraThemeManager.theme.globalColor(for: .paletteGrey70).withAlphaComponent(0.3),
                 xCoordinate: 0,
                 yCoordinate: 8,
                 blur: 32,
@@ -47,7 +47,7 @@ public enum Shadows: ShadowsProtocol, CaseIterable {
             
         case .glowSm:
             return ShadowAttributes(
-                color: MainThemeManager.shared.globalColor(for: .paletteBlue05),
+                color: AbraThemeManager.theme.globalColor(for: .paletteBlue05),
                 xCoordinate: 0,
                 yCoordinate: 0,
                 blur: 32,

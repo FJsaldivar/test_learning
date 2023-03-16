@@ -10,7 +10,6 @@ import UIKit
 
 // MARK: Model
 public struct UalaCarouselCellModel: UalaCarouselCellModelType {
-    
     public var type: UalaCarouselItemType
     public var image: UIImage
     public var title: String

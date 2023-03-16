@@ -2,11 +2,18 @@ import Alamofire
 
 struct ArgVirtualKeyRouter: VirtualKeyRouteable {
     var route: VirtualKeyRoute = .getClabeCVU
+    var cvuCOELSA = {
+        FeatureFlaggingManager.shared.featureEnabled(.coelsaCVU)
+    }
+    
+    var baseUrl: String {
+        cvuCOELSA() ? String.getConfigurationValue(forKey: .baseUrlTransactional, from: .Core) : String.getConfigurationValue(forKey: .baseUrlDebit, from: .Core)
+    }
     
     var path: String {
         switch route {
         case .getClabeCVU, .postClabeCVU:
-            return "/2/cvu"
+            return cvuCOELSA() ? "api/v1/address" : "/2/cvu"
         }
     }
     
@@ -14,15 +21,6 @@ struct ArgVirtualKeyRouter: VirtualKeyRouteable {
         switch route {
         case .getClabeCVU, .postClabeCVU:
             return ArgCVUMapper()
-        }
-    }
-    
-    var errorMapper: Mappeable {
-        switch route {
-        case .getClabeCVU:
-            return ArgCVUErrorMapper()
-        default:
-            return ErrorMapper()
         }
     }
     

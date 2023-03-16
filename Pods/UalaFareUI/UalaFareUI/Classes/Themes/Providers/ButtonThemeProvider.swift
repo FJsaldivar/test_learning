@@ -7,17 +7,17 @@
 // swiftlint:disable type_body_length
 
 public protocol ButtonThemeProvider {
-    func theme(for buttonType: UIFareButtonType,
+    func theme(for buttonType: AbraButtonType,
                typographyProvider: ThemeTypographyProvider,
-               theme: Theme) -> ButtonTheme
+               theme: Theme) -> AbraButtonTheme
 }
 
 public final class DefaultButtonThemeProvider: ButtonThemeProvider {
     public init() { }
         
-    public func theme(for buttonType: UIFareButtonType,
+    public func theme(for buttonType: AbraButtonType,
                       typographyProvider: ThemeTypographyProvider,
-                      theme: Theme) -> ButtonTheme {
+                      theme: Theme) -> AbraButtonTheme {
         
         let enabledConfiguration = enabledConfiguration(for: buttonType,
                                                         theme: theme,
@@ -43,7 +43,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
                                buttonPreferedSize: .zero)
     }
     
-    private func typographyStyle(for buttonType: UIFareButtonType,
+    private func typographyStyle(for buttonType: AbraButtonType,
                                  typographyProvider: ThemeTypographyProvider) -> TypographyStyle {
         switch buttonType {
         case .link:
@@ -54,15 +54,15 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func cornerRadius(for buttonType: UIFareButtonType) -> CGFloat {
+    private func cornerRadius(for buttonType: AbraButtonType) -> CGFloat {
         return buttonHeight(for: buttonType) / 2
     }
     
-    private func showIcon(for type: UIFareButtonType) -> Bool {
+    private func showIcon(for type: AbraButtonType) -> Bool {
         return true
     }
     
-    private func showTitle(for type: UIFareButtonType) -> Bool {
+    private func showTitle(for type: AbraButtonType) -> Bool {
         switch type {
         case .primary, .seccondary, .textOnly:
             return true
@@ -72,7 +72,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func contentInsets(for type: UIFareButtonType) -> UIEdgeInsets {
+    private func contentInsets(for type: AbraButtonType) -> UIEdgeInsets {
         let edgePadding = edgePadding(type: type)
 
         switch type {
@@ -84,7 +84,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func edgePadding(type: UIFareButtonType) -> CGFloat {
+    private func edgePadding(type: AbraButtonType) -> CGFloat {
         switch type {
         case .primary, .seccondary, .textOnly:
             switch type.size {
@@ -101,7 +101,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func buttonWidth(for buttonType: UIFareButtonType, hasIcon: Bool) -> CGFloat {
+    private func buttonWidth(for buttonType: AbraButtonType, hasIcon: Bool) -> CGFloat {
         switch buttonType {
         case .primary, .seccondary, .textOnly:
             switch buttonType.size {
@@ -118,7 +118,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func buttonHeight(for buttonType: UIFareButtonType) -> CGFloat {
+    private func buttonHeight(for buttonType: AbraButtonType) -> CGFloat {
         
         switch buttonType {
         case .primary, .seccondary, .textOnly:
@@ -137,7 +137,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func iconSize(for type: UIFareButtonType) -> CGSize {
+    private func iconSize(for type: AbraButtonType) -> CGSize {
         switch type {
         case .link:
             return CGSize(width: 16, height: 16)
@@ -148,7 +148,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         
     }
     
-    private func enabledConfiguration(for buttonType: UIFareButtonType, theme: Theme, darkBackground: Bool) -> ThemeableButtonConfiguration {
+    private func enabledConfiguration(for buttonType: AbraButtonType, theme: Theme, darkBackground: Bool) -> AbraButtonStatusConfiguration {
         if darkBackground {
             return enabledOnDarkConfiguration(for: buttonType, theme: theme)
         }
@@ -197,7 +197,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func enabledOnDarkConfiguration(for buttonType: UIFareButtonType, theme: Theme) -> ThemeableButtonConfiguration {
+    private func enabledOnDarkConfiguration(for buttonType: AbraButtonType, theme: Theme) -> AbraButtonStatusConfiguration {
         switch buttonType {
         case .primary:
             return UalaButtonConfiguration(backgroundColor: theme.color(for: .neutralWhite),
@@ -241,7 +241,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func disabledConfiguration(for buttonType: UIFareButtonType, theme: Theme, darkBackground: Bool) -> ThemeableButtonConfiguration {
+    private func disabledConfiguration(for buttonType: AbraButtonType, theme: Theme, darkBackground: Bool) -> AbraButtonStatusConfiguration {
         if darkBackground {
             return disabledOnDarkConfiguration(for: buttonType, theme: theme)
         }
@@ -254,7 +254,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
                                            borderWidth: 0)
             
         case .seccondary:
-            return UalaButtonConfiguration(backgroundColor: theme.color(for: .neutralWhite),
+            return UalaButtonConfiguration(backgroundColor: theme.color(for: .bgLight),
                                            labelColor: theme.color(for: .neutralMiddle),
                                            iconTintColor: theme.color(for: .neutralMiddle),
                                            borderColor: theme.color(for: .neutralLight),
@@ -286,7 +286,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func disabledOnDarkConfiguration(for buttonType: UIFareButtonType, theme: Theme) -> ThemeableButtonConfiguration {
+    private func disabledOnDarkConfiguration(for buttonType: AbraButtonType, theme: Theme) -> AbraButtonStatusConfiguration {
         switch buttonType {
         case .primary:
             return UalaButtonConfiguration(backgroundColor: theme.color(for: .primaryDark),
@@ -326,7 +326,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func pressedConfiguration(for buttonType: UIFareButtonType, theme: Theme, darkBackground: Bool) -> ThemeableButtonConfiguration {
+    private func pressedConfiguration(for buttonType: AbraButtonType, theme: Theme, darkBackground: Bool) -> AbraButtonStatusConfiguration {
         if darkBackground {
             return pressedOnDarkConfiguration(for: buttonType, theme: theme)
         }
@@ -375,7 +375,7 @@ public final class DefaultButtonThemeProvider: ButtonThemeProvider {
         }
     }
     
-    private func pressedOnDarkConfiguration(for buttonType: UIFareButtonType, theme: Theme) -> ThemeableButtonConfiguration {
+    private func pressedOnDarkConfiguration(for buttonType: AbraButtonType, theme: Theme) -> AbraButtonStatusConfiguration {
         switch buttonType {
         case .primary:
             return UalaButtonConfiguration(backgroundColor: theme.color(for: .primaryDark),

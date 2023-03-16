@@ -6,5 +6,13 @@
 //
 
 public protocol PasswordCollectorViewType: UIViewController {
-    func setError(_ value: Bool)
+    @MainActor
+    func setError(_ value: Bool) async
+}
+
+public extension PasswordCollectorViewType {
+    @MainActor
+    func setError(_ value: Bool) async {
+        // empty default implementation
+    }
 }

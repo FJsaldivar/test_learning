@@ -18,12 +18,12 @@ public protocol MultisectionInformationViewProtocol: AnyObject {
     var multisectionPresenter: MultisectionInformationPresenter? { get set }
 }
 
-//MARK: Interactor -
+// MARK: Interactor -
 public protocol MultisectionInformationInteractorProtocol: AnyObject {
     var presenter: MultisectionInformationPresenter? { get set }
 }
 
-//MARK: Router -
+// MARK: Router -
 public protocol MultisectionInformationRouterProtocol {
     func didPressMainButton()
     func didPressSecondaryButton()

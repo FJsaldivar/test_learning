@@ -26,7 +26,7 @@ public class PhoneNumbersPrefix {
     
     func hasPrefixValid(phoneNumber: String) -> Bool {
         guard Int(phoneNumber.count) == 10 else { return false }
-        return getPrefix(phoneNumber: phoneNumber) == "" ? false : true
+        return getPrefix(phoneNumber: phoneNumber).isEmpty ? false : true
     }
     
     public func getPrefix(phoneNumber: String) -> String {

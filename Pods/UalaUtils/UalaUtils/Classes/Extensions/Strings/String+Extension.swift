@@ -93,4 +93,43 @@ public extension String {
     func removeDiacritics() -> String {
         return self.folding(options: .diacriticInsensitive, locale: .current)
     }
+    
+    func convertStringToDouble(localeIdentifier: String) -> Double? {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: localeIdentifier)
+        formatter.numberStyle = .decimal
+        let number = formatter.number(from: self)
+        return number?.doubleValue
+    }
+    
+    static func convertToFile(
+        base64String: String,
+        file: String,
+        type: FileType = .pdf,
+        directory: FileManager.SearchPathDirectory = .documentDirectory
+    ) -> URL? {
+        guard var fileURL = FileManager.default.urls(for: directory, in: .userDomainMask).first,
+              let data = Data(base64Encoded: base64String) else {
+            return nil
+        }
+        
+        if !FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.createDirectory(atPath: fileURL.path, withIntermediateDirectories: true)
+            } catch {
+                if let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                    fileURL = documentPath
+                }
+            }
+        }
+        
+        fileURL.appendPathComponent(file + type.fullExtension, isDirectory: false)
+        
+        do {
+            try data.write(to: fileURL)
+            return fileURL
+        } catch {
+            return nil
+        }
+    }
 }

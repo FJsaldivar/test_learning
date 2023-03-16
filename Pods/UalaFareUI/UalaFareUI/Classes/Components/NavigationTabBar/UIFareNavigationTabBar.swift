@@ -7,42 +7,10 @@
 
 import UIKit
 
-public enum UIFareTabBarControllerCentralButtonType: Equatable {
-    case standart
-    case rounded(icon: UIImage)
-}
-
-public protocol UIFareTabBarControllerConfiguration {
-    var font: UIFont { get }
-    var iconTintColor: UIColor { get }
-    var textColor: UIColor { get }
-    var textVerticalPositionAdjustment: CGFloat { get }
-}
-
-public protocol UIFareTabBarControllerTheme {
-    var normalConfiguration: UIFareTabBarControllerConfiguration { get }
-    var selectedConfiguration: UIFareTabBarControllerConfiguration { get }
-    var centralButtonTheme: ButtonTheme { get }
-    var backgroundColor: UIColor { get }
-}
-
-public struct UIFareTabBarItem {
-    public let viewController: UIViewController
-    public let selectedStatusImage: UIImage
-    public let deselectedStatusImage: UIImage
-    public let title: String
-    
-    public init(viewController: UIViewController, selectedStatusImage: UIImage, deselectedStatusImage: UIImage, title: String) {
-        self.viewController = viewController
-        self.selectedStatusImage = selectedStatusImage
-        self.deselectedStatusImage = deselectedStatusImage
-        self.title = title
-    }
-}
-
-open class UIFareTabBarController: UITabBarController {
-    private lazy var customCentralButton: UIFareButton = {
-        let button = UIFareButton(theme: theme.centralButtonTheme, frame: .zero)
+/// A subclass of UITabBarController that is customized as design required
+open class AbraTabBarController: UITabBarController {
+    private lazy var customCentralButton: AbraButton = {
+        let button = AbraButton(theme: theme.centralButtonTheme, frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self,
                          action: #selector(centralButtonPressed),
@@ -50,15 +18,25 @@ open class UIFareTabBarController: UITabBarController {
         return button
     }()
     
-    private let theme: UIFareTabBarControllerTheme
-    private var tabItems: [UIFareTabBarItem]
+    private let theme: AbraTabBarControllerTheme
+    private var tabItems: [AbraTabBarItem]
     private let tabBarKey = "tabBar"
-    private let centralButtonType: UIFareTabBarControllerCentralButtonType
+    private let centralButtonType: AbraTabBarControllerCentralButtonType
     private var centralItemIndex: Int {
         tabItems.count / 2
     }
     
-    public init(theme: UIFareTabBarControllerTheme, items: [UIFareTabBarItem], centralButtonType: UIFareTabBarControllerCentralButtonType) {
+    /**
+     
+     */
+    public convenience init(items: [AbraTabBarItem], centralButtonType: AbraTabBarControllerCentralButtonType) {
+        self.init(theme: AbraThemeManager.theme.tabBarControllerTheme(),
+                  items: items,
+                  centralButtonType: centralButtonType)
+        observeThemeUpdates()
+    }
+    
+    public init(theme: AbraTabBarControllerTheme, items: [AbraTabBarItem], centralButtonType: AbraTabBarControllerCentralButtonType) {
         self.theme = theme
         self.tabItems = items
         self.centralButtonType = centralButtonType
@@ -82,7 +60,7 @@ open class UIFareTabBarController: UITabBarController {
     }
     
     private func configureTabBar() {
-        setValue(UIFareTabBar(theme: MainThemeManager.shared,
+        setValue(AbraTabBar(theme: AbraThemeManager.theme,
                               shouldAddCentralButtonShape: shouldEnhanceCentralButton()),
                  forKey: tabBarKey)
         let tabBarAppearance = tabBarAppearance()
@@ -224,4 +202,10 @@ open class UIFareTabBarController: UITabBarController {
 //        }
 //        animateView(imageView)
 //    }
+}
+
+extension AbraTabBarController: ThemeObserver {
+    public func updateTheme() {
+        configureTabBar()
+    }
 }

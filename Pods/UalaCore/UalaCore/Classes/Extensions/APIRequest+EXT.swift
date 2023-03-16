@@ -12,4 +12,12 @@ public protocol APIRequest: UalaNetwork.APIRequest {
     var responseDecoder: APIResponseDecoder { get }
     var authorizationType: APIClientAuthorizationType { get }
     var headers: [String: String]? { get set }
+    var mocks: Data? { get }
+}
+
+public extension UalaCore.APIRequest {
+    
+    var mocks: Data? {
+        return nil
+    }
 }

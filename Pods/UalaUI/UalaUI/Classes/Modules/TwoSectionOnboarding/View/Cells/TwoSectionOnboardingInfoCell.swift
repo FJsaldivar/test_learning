@@ -30,7 +30,9 @@ public class TwoSectionOnboardingInfoCell: UITableViewCell {
     public func configure(with item: TwoSectionOnboardingField) {
         cellLabel.text = item.text
         cellLabel.numberOfLines = 0
-        cellIcon.image = CommonImage(named: item.imageName)
+        
+        cellIcon.image = item.image ?? CommonImage(named: item.imageName)
+        
         if item.buttonText.isEmpty {
             linkButton.isHidden = true
         }

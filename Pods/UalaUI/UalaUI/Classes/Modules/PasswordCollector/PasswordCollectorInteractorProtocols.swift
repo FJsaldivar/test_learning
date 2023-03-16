@@ -9,7 +9,7 @@ public protocol PasswordCollectorInteractorType: AnyObject {
     func viewDidLoad()
 }
 
-public extension PasswordCollectorParametersType {
+public extension PasswordCollectorInteractorType {
     func viewDidLoad() {
         // Empty Default implementation
     }

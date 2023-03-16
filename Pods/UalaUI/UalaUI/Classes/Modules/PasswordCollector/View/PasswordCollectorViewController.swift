@@ -17,7 +17,7 @@ final internal class PasswordCollectorViewController: UIViewController {
     var primaryAction: UIButton = UIButton()
     var passwordTextField: BancarTextField = BancarTextField()
     var showPasswordBtn: UIButton = UIButton()
-
+    
     var spacing: CGFloat = 24
     var horizontalInsets: CGFloat = CGFloat()
     
@@ -151,12 +151,13 @@ final internal class PasswordCollectorViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
+    }
 }
 
 extension PasswordCollectorViewController: PasswordCollectorViewType {
-    func setError(_ value: Bool) {
+    @MainActor
+    func setError(_ value: Bool) async {
         primaryAction.isEnabled = !value
         let errorMessage: String = dependencies.parameters.underlineErrorDescription
         passwordTextField.setError(isError: value, text: errorMessage)

@@ -36,6 +36,7 @@ public struct TwoSectionOnboardingDataModel {
 public struct TwoSectionOnboardingField {
     
     let imageName: String
+    let image: UIImage?
     let text: String
     let fieldType: TwoSectionOnboardingFieldType
     let buttonText: String
@@ -43,7 +44,8 @@ public struct TwoSectionOnboardingField {
     let highlightedText: [String]
     
     public init(
-        imageName: String,
+        imageName: String = "",
+        image: UIImage? = nil,
         text: String,
         fieldType: TwoSectionOnboardingFieldType,
         buttonText: String,
@@ -51,6 +53,7 @@ public struct TwoSectionOnboardingField {
         highlightedText: [String] = []
     ) {
         self.imageName = imageName
+        self.image = image
         self.text = text
         self.fieldType = fieldType
         self.buttonText = buttonText

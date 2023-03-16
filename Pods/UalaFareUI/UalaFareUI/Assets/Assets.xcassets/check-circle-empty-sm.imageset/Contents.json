@@ -1,0 +1,12 @@
+{
+    "images" : [
+        {
+        "filename" : "check-circle-empty-sm.svg",
+        "idiom" : "universal"
+        }
+    ],
+    "info" : {
+        "author" : "xcode",
+        "version" : 1
+    }
+}

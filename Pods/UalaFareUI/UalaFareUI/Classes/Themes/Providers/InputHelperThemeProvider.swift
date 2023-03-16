@@ -27,22 +27,22 @@ public final class DefaultInputHelperThemeProvider: InputHelperThemeProvider {
         switch type {
         case .information:
             return DefaultInputHelperConfiguration(icon: UIImage(withAsset: DefaultIcons.infoCircle),
-                                                   tint: MainThemeManager.shared.color(for: .informationMiddle))
+                                                   tint: AbraThemeManager.theme.color(for: .informationMiddle))
         case .success:
             return DefaultInputHelperConfiguration(icon: UIImage(withAsset: DefaultIcons.checkCircle),
-                                                   tint: MainThemeManager.shared.color(for: .successMiddle))
+                                                   tint: AbraThemeManager.theme.color(for: .successMiddle))
         case .warning:
             return DefaultInputHelperConfiguration(icon: UIImage(withAsset: DefaultIcons.warningCircle),
-                                                   tint: MainThemeManager.shared.color(for: .warningMiddle))
+                                                   tint: AbraThemeManager.theme.color(for: .warningMiddle))
         case .error:
             return DefaultInputHelperConfiguration(icon: UIImage(withAsset: DefaultIcons.deniedCircle),
-                                                   tint: MainThemeManager.shared.color(for: .errorMiddle))
+                                                   tint: AbraThemeManager.theme.color(for: .errorMiddle))
         case .standard:
             return DefaultInputHelperConfiguration(icon: nil,
-                                                   tint: MainThemeManager.shared.color(for: .neutralDark))
+                                                   tint: AbraThemeManager.theme.color(for: .neutralDark))
         case .disabled:
             return DefaultInputHelperConfiguration(icon: nil,
-                                                   tint: MainThemeManager.shared.color(for: .neutralMiddle))
+                                                   tint: AbraThemeManager.theme.color(for: .neutralMiddle))
         }
     }
 }

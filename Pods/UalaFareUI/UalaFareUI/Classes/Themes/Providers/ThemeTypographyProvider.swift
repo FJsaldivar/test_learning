@@ -7,7 +7,7 @@
 
 public enum ComponentType {
     case button(size: ComponentSize)
-    case dynamicCell(type: UIFareCellType, component: DynamicCellComponent)
+    case dynamicCell(type: AbraCellType, component: DynamicCellComponent)
 }
 
 public enum DynamicCellComponent {
@@ -41,7 +41,7 @@ final class DefaultThemeTypographyProvider: ThemeTypographyProvider {
         }
     }
     
-    private func dynamicCellStyle(for type: UIFareCellType, component: DynamicCellComponent) -> TypographyStyle {
+    private func dynamicCellStyle(for type: AbraCellType, component: DynamicCellComponent) -> TypographyStyle {
         switch component {
         case .title:
             switch type {

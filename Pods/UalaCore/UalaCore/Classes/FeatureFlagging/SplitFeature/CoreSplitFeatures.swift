@@ -40,8 +40,10 @@ public enum Feature: String, CaseIterable {
     case insuranceWTW = "insurance_wtw"
     case insuranceWTWHealthAssistanceActive = "insurance_wtw_health_assistance_active"
     case acquiringQR = "acquiring_qr_feature"
+    case referralProgram = "referral_program"
     case referralProgramPPJJ = "referral_program_ppjj"
     case contactAgenda = "transfers_list_contact"
+    case coelsaCVU = "coelsa_consulta_cvu"
     // MX
     case complianceMXUpdateEmail = "compliance_mx_update_email"
     case complienceMXAccountStatementsMFA = "complience_mx_account_statements_mfa"

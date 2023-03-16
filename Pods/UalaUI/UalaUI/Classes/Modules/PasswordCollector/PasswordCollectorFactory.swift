@@ -27,7 +27,7 @@ public struct PasswordCollectorFactory: FeatureFactoryType {
                                                              presenter: presenter)
         presenter.view = viewController
         presenter.interactor = interactor
-
+        presenter.router = router
         router.view = viewController
         
         return viewController

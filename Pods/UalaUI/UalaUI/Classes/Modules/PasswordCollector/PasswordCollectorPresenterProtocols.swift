@@ -20,4 +20,16 @@ public extension PasswordCollectorPresenterType {
     func viewDidLoad() {
         // Empty Default implementation
     }
+    
+    func didTapPrimaryAction() {
+        // Empty Default implementation
+    }
+    
+    func didCollectPassword(value: String) {
+        // Empty Default implementation
+    }
+    
+    func didUpdateError() {
+        // Empty Default implementation
+    }
 }

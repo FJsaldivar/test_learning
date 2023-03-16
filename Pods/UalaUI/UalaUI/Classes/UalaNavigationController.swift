@@ -67,6 +67,7 @@ public extension UINavigationController {
         }
     }
     
+    // swiftlint:disable:next function_body_length
     private func parameters(for style: ColorsNav) -> [NavParameters: UIColor] {
         let blueColor = UalaStyle.colors.blue50
         let greyColor = UalaStyle.colors.grey90

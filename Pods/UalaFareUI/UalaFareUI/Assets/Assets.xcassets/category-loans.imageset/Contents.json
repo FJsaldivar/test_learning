@@ -1,0 +1,12 @@
+{
+    "images" : [
+        {
+        "filename" : "category-loans.svg",
+        "idiom" : "universal"
+        }
+    ],
+    "info" : {
+        "author" : "xcode",
+        "version" : 1
+    }
+}

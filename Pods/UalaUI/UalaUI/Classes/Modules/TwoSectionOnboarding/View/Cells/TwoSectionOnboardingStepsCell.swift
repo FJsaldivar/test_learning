@@ -31,8 +31,8 @@ public class TwoSectionOnboardingStepsCell: UITableViewCell {
     
     public func configure(with item: TwoSectionOnboardingField) {
         cellLabel.text = item.text
-        cellIcon.isHidden = item.imageName.isEmpty
-        cellIcon.image = CommonImage(named: item.imageName)
+        cellIcon.isHidden = item.imageName.isEmpty && item.image == nil
+        cellIcon.image = item.image ?? CommonImage(named: item.imageName)
         cellLabel.customize(style: item.textStyle)
         if item.buttonText.isEmpty {
             linkButton.isHidden = true

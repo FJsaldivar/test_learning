@@ -1,0 +1,42 @@
+{
+  "name": "UalaTesting",
+  "version": "0.1.0",
+  "summary": "A short description of UalaTesting.",
+  "swift_versions": "5.4",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/gallarza-uala/UalaTesting",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "gallarza-uala": "carlos.gallarza@ua.la"
+  },
+  "source": {
+    "git": "git@github.com:Bancar/uala-testing-ios.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source_files": "UalaTesting/Source/**/*",
+  "dependencies": {
+    "PromiseKit": [
+
+    ]
+  },
+  "frameworks": "XCTest",
+  "resource_bundles": {
+    "UalaTesting": [
+      "UalaTesting/Source/Assets/**/*"
+    ]
+  },
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "UalaTesting/Test/**/*"
+    }
+  ],
+  "swift_version": "5.4"
+}

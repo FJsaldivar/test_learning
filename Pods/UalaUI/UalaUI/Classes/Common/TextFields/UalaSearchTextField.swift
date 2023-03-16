@@ -68,7 +68,7 @@ open class UalaSearchTextField: UITextField {
     }
     
     @objc func clearField(sender: AnyObject) {
-        text = ""
+        self.text = ""
         onClearButtonTapped?()
     }
 }
@@ -87,6 +87,15 @@ public extension UalaSearchTextFieldStyle {
                                         backGroudColor: UIColor.white,
                                         textColor: UalaStyle.colors.fareTextMainColor,
                                         leftImageName: "searchSmall_blue",
+                                        fontSize: 17,
+                                        clearButtonTintColor: UalaStyle.colors.grey60)
+    }
+    
+    static var lightGray: UalaSearchTextFieldStyle {
+        return UalaSearchTextFieldStyle(tintColor: UalaStyle.colors.fareTextMainColor,
+                                        backGroudColor: UalaStyle.colors.background,
+                                        textColor: UalaStyle.colors.fareTextMainColor,
+                                        leftImageName: "",
                                         fontSize: 17,
                                         clearButtonTintColor: UalaStyle.colors.grey60)
     }

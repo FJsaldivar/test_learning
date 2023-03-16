@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Custom navigation bar for the home section
 public final class HomeNavigationBar: UIView {
     private weak var hostingViewController: UIViewController?
     private let appearance: NavigationBarAppearance
@@ -23,6 +24,11 @@ public final class HomeNavigationBar: UIView {
         return stackView
     }()
     
+    /**
+     - Parameters:
+        - appearance: The appearance of the navigation bar
+        - frame: The frame of the navigation bar
+     */
     public init(appearance: NavigationBarAppearance, frame: CGRect = .zero) {
         self.appearance = appearance
         super.init(frame: frame)
@@ -33,6 +39,7 @@ public final class HomeNavigationBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// The title label placed on the left side of the bar
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -75,6 +82,7 @@ public final class HomeNavigationBar: UIView {
         self.titleLabel.text = title
     }
     
+    /// Adds bar buttons on the right of the navigation bar
     public func addBarButton(buttons: [UIButton]) {
         buttons.forEach { button in
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -83,11 +91,16 @@ public final class HomeNavigationBar: UIView {
         }
     }
     
+    /// Adds a single button on the right side of the bar
     public func addBarButton(button: UIButton) {
         tabBarButtonStack.addArrangedSubview(button)
     }
     
-    public func addFormattedTabBarButton(target: Any?, selector: Selector, for event: UIControl.Event, image: UIImage) {
+    /// Adds a new button with the correct format to the right side of the navigation bar
+    public func addFormattedTabBarButton(target: Any?,
+                                         selector: Selector,
+                                         for event: UIControl.Event,
+                                         image: UIImage) {
         let button = UIButton()
         button.isUserInteractionEnabled = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -99,6 +112,7 @@ public final class HomeNavigationBar: UIView {
         addBarButton(button: button)
     }
     
+    /// This function adds the navigation bar at the top of the ViewController passed
     public func addInto(hostingViewController: UIViewController) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.hostingViewController = hostingViewController

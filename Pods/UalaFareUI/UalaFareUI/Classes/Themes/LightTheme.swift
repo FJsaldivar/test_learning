@@ -13,18 +13,20 @@ final class LightTheme: Theme {
     private let textFieldThemeProvider: TextFieldsThemeProvider
     private let inputHelperThemeProvider: InputHelperThemeProvider
     private let inputsThemeProvider: InputsThemeProvider
-    private let dynamicInfoCellModelProvider: UIFareCellModelProvider
-    private let cardModelFactory: UIFareCardModelFactory
-    private let tabBarViewControllerThemeFactory: UIFareTabBarControllerThemeFactory
+    private let dynamicInfoCellModelProvider: AbraCellModelFactory
+    private let cardModelFactory: AbraCardModelFactory
+    private let tabBarViewControllerThemeFactory: AbraTabBarControllerThemeFactory
+    private let alertViewThemeFactory: AbraAlertViewThemeFactory
 
     init(buttonThemeProvider: ButtonThemeProvider = DefaultButtonThemeProvider(),
          typographyProvider: ThemeTypographyProvider = DefaultThemeTypographyProvider(),
          textFieldThemeProvider: TextFieldsThemeProvider = DefaultTextFieldsThemeProvider(),
          inputHelperThemeProvider: InputHelperThemeProvider = DefaultInputHelperThemeProvider(),
          inputTextThemeProvider: InputsThemeProvider = DefaultInputsThemeProvider(),
-         dynamicInfoCellModelProvider: UIFareCellModelProvider = DefaultUIFareCellModelProvider(),
-         cardModelFactory: UIFareCardModelFactory = DefaultUIFareCardModelFactory(),
-         tabBarViewControllerThemeFactory: UIFareTabBarControllerThemeFactory = DefaultUIFareTabBarControllerThemeFactory()) {
+         dynamicInfoCellModelProvider: AbraCellModelFactory = DefaultUIFareCellModelProvider(),
+         cardModelFactory: AbraCardModelFactory = DefaultAbraCardModelFactory(),
+         tabBarViewControllerThemeFactory: AbraTabBarControllerThemeFactory = DefaultAbraTabBarControllerThemeFactory(),
+         alertViewThemeFactory: AbraAlertViewThemeFactory = LightAbraAlertViewThemeFactory()) {
         self.buttonThemeProvider = buttonThemeProvider
         self.typographyProvider = typographyProvider
         self.textFieldThemeProvider = textFieldThemeProvider
@@ -33,6 +35,7 @@ final class LightTheme: Theme {
         self.dynamicInfoCellModelProvider = dynamicInfoCellModelProvider
         self.cardModelFactory = cardModelFactory
         self.tabBarViewControllerThemeFactory = tabBarViewControllerThemeFactory
+        self.alertViewThemeFactory = alertViewThemeFactory
     }
     
     func globalColor(for color: GlobalColors) -> UIColor {
@@ -59,19 +62,19 @@ final class LightTheme: Theme {
     
     func addCornerRadius(to view: UIView) { }
     
-    func toggleThemedModel() -> UIFareSwitchModel {
-        DefaultUIFareSwitchModel(onColor: color(for: .primaryDefault),
+    func toggleThemedModel() -> AbraSwitchTheme {
+        DefaultAbraSwitchTheme(onColor: color(for: .primaryDefault),
                     offColor: color(for: .neutralMiddle),
                     disabledOnColor: color(for: .primaryLight),
                     disabledOffColor: color(for: .neutralLight),
                     thumbColor: color(for: .neutralWhite))
     }
     
-    func buttonTheme(for type: UIFareButtonType) -> ButtonTheme {
+    func buttonTheme(for type: AbraButtonType) -> AbraButtonTheme {
         buttonThemeProvider.theme(for: type, typographyProvider: typographyProvider, theme: self)
     }
     
-    func tagThemedModel(status: UIFareTagStatus, size: ComponentSize) -> UIFareTagModel {
+    func tagThemedModel(status: AbraTagStatus, size: ComponentSize) -> AbraTagTheme {
         let labelColor: UIColor
         let backgroundColor: UIColor
         let edgeInsets: UIEdgeInsets
@@ -108,7 +111,7 @@ final class LightTheme: Theme {
         }
         
         return DefaultTagTheme(backgroundColor: backgroundColor,
-                               typographyStyle: size == .small ? .buttonSmRegular : .buttonMdRegular,
+                               typographyStyle: size == .small ? .labelSmRegular : .labelMdRegular,
                                cornerRadius: edgeInsets.left,
                                textColor: labelColor,
                                edgeInsets: edgeInsets)
@@ -180,7 +183,7 @@ final class LightTheme: Theme {
                                                   helperType: helperType)
     }
     
-    func radioButtonTheme() -> UIFareRadioButtonModel {
+    func radioButtonTheme() -> AbraRadioButtonTheme {
         return DefaultRadioButtonTheme(selectedStateBackgroundColor: color(for: .primaryDefault),
                                        selectedStateDotColor: color(for: .neutralLighter),
                                        selectedStateBorderColor: .clear,
@@ -195,8 +198,8 @@ final class LightTheme: Theme {
                                        disabledSelectedStateBackgroundColor: color(for: .neutralLight))
     }
     
-    func checkboxTheme() -> UIFareCheckboxModel {
-        return DefaultUIFareCheckboxModel(unselectedBackgroundColor: color(for: .neutralWhite),
+    func checkboxTheme() -> AbraCheckboxTheme {
+        return DefaultAbraCheckboxTheme(unselectedBackgroundColor: color(for: .neutralWhite),
                                     selectedBackgroundColor: color(for: .primaryDefault),
                                     unselectedBorderColor: color(for: .neutralMiddle),
                                     selectedBorderColor: .clear,
@@ -206,15 +209,15 @@ final class LightTheme: Theme {
                                     icon: UIImage(withName: "check") ?? UIImage())
     }
     
-    func themedDynamicInformationCellModel(for type: UIFareCellType) -> UIFareCellModel {
+    func themedDynamicInformationCellModel(for type: AbraCellType) -> AbraCellThemedModel {
         dynamicInfoCellModelProvider.model(theme: self, typographyProvider: typographyProvider, type: type)
     }
     
-    func cardTheme(cardType: UIFareCardType) -> UIFareCardModel {
+    func cardTheme(cardType: AbraCardType) -> AbraCardModel {
         return cardModelFactory.themedModel(for: cardType, theme: self)
     }
     
-    func tabBarControllerTheme() -> UIFareTabBarControllerTheme {
+    func tabBarControllerTheme() -> AbraTabBarControllerTheme {
         return tabBarViewControllerThemeFactory.tabBarControllerTheme(theme: self)
     }
     
@@ -226,22 +229,27 @@ final class LightTheme: Theme {
                                                       titleTextColor: color(for: .neutralWhite),
                                                       titleTyphography: .titleLg)
             
-        case .darkBackground:
-            return DefaultHomeNavigationBarAppearance(backgroundColor: color(for: .primaryDefault),
-                                                      iconTintColor: color(for: .neutralWhite),
-                                                      titleTextColor: color(for: .neutralWhite),
-                                                      titleTyphography: .headingSm)
-            
-        case .lightBackground:
-            return DefaultHomeNavigationBarAppearance(backgroundColor: .clear,
-                                                      iconTintColor: color(for: .neutralDark),
-                                                      titleTextColor: color(for: .neutralDarker),
-                                                      titleTyphography: .headingSm)
+        case .regular(_, let isInverted):
+            if isInverted {
+                return DefaultHomeNavigationBarAppearance(backgroundColor: color(for: .primaryDefault),
+                                                          iconTintColor: color(for: .neutralWhite),
+                                                          titleTextColor: color(for: .neutralWhite),
+                                                          titleTyphography: .headingSm)
+            } else {
+                return DefaultHomeNavigationBarAppearance(backgroundColor: .clear,
+                                                          iconTintColor: color(for: .neutralDark),
+                                                          titleTextColor: color(for: .neutralDarker),
+                                                          titleTyphography: .headingSm)
+            }
         }
+    }
+    
+    func alertViewTheme(alertType: AbraAlertViewType) -> AbraAlertViewTheme {
+        alertViewThemeFactory.theme(alertType: alertType, theme: self)
     }
 }
 
-struct DefaultTagTheme: UIFareTagModel {
+struct DefaultTagTheme: AbraTagTheme {
     var backgroundColor: UIColor
     var typographyStyle: TypographyStyle
     var cornerRadius: CGFloat
@@ -249,7 +257,7 @@ struct DefaultTagTheme: UIFareTagModel {
     var edgeInsets: UIEdgeInsets
 }
 
-struct UalaButtonConfiguration: ThemeableButtonConfiguration {
+struct UalaButtonConfiguration: AbraButtonStatusConfiguration {
     var backgroundColor: UIColor
     var labelColor: UIColor
     var iconTintColor: UIColor
@@ -257,10 +265,10 @@ struct UalaButtonConfiguration: ThemeableButtonConfiguration {
     var borderWidth: CGFloat
 }
 
-struct UalaButtonTheme: ButtonTheme {
-    var enabledConfiguration: ThemeableButtonConfiguration
-    var disabledConfiguration: ThemeableButtonConfiguration
-    var pressedConfiguration: ThemeableButtonConfiguration
+struct UalaButtonTheme: AbraButtonTheme {
+    var enabledConfiguration: AbraButtonStatusConfiguration
+    var disabledConfiguration: AbraButtonStatusConfiguration
+    var pressedConfiguration: AbraButtonStatusConfiguration
     var typographyStyle: TypographyStyle
     var contentInsets: UIEdgeInsets
     var cornerRadius: CGFloat

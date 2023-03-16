@@ -10,15 +10,21 @@ import UalaUtils
 import UalaCore
 
 final class LoginEvents: LoginDemoPresenterEventsType {
-    private let loginStatus: LoginStatusDefault = LoginStatusDefault()
-
+    private let logManager: LogManager
+    private let loginStatus: LoginStatus
+    
+    init(logManager: LogManager = LogManager.shared, loginStatus: LoginStatus = LoginStatusDefault()) {
+        self.logManager = logManager
+        self.loginStatus = loginStatus
+    }
+    
     func get(error: Error) {
-        LogManager.shared.debugError(error: error, type: self)
+        logManager.debugError(error: error, type: self)
     }
     
     func loginSuccess(scheme: Scheme, country: CountryEnvironment, loginData: LoginData) async {
-        LogManager.shared.debug(info: "Sheme -> \(scheme.rawValue)")
-        LogManager.shared.debug(info: "Country -> \(country.rawValue)")
+        logManager.debug(info: "Sheme -> \(scheme.rawValue)")
+        logManager.debug(info: "Country -> \(country.rawValue)")
         loginStatus.setLoginStatus(isLogged: true)
     }
 }

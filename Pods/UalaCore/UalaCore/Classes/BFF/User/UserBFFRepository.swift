@@ -13,7 +13,7 @@ public class UserBFFRepository {
         self.apiClient = apiClient
     }
     
-    private func loadUserInfo() async throws -> UserMulticountry {
+    public func loadUserInfo() async throws -> UserMulticountry {
         let user: UserMulticountry = try await apiClient.request(request: UserBFFAPIRequest(),
                                                                  responseType: UserMulticountry.self,
                                                                  retries: 0)

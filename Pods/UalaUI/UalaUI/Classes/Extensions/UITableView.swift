@@ -29,6 +29,9 @@ public extension ReusableView where Self: UIView {
 }
 
 public extension UITableView {
+    func register<T: UITableViewCell>(with: T.Type) where T: ReusableView {
+        register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
+    }
     
     func register<T: UITableViewCell>(_: T.Type) {
         

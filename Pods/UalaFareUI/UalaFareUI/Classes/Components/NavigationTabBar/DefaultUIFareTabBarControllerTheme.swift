@@ -5,9 +5,9 @@
 //  Created by Luis Perez on 30/09/22.
 //
 
-struct DefaultUIFareTabBarControllerTheme: UIFareTabBarControllerTheme {
-    var normalConfiguration: UIFareTabBarControllerConfiguration
-    var selectedConfiguration: UIFareTabBarControllerConfiguration
-    var centralButtonTheme: ButtonTheme
+struct DefaultUIFareTabBarControllerTheme: AbraTabBarControllerTheme {
+    var normalConfiguration: AbraTabBarControllerConfiguration
+    var selectedConfiguration: AbraTabBarControllerConfiguration
+    var centralButtonTheme: AbraButtonTheme
     var backgroundColor: UIColor
 }

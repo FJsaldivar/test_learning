@@ -101,6 +101,7 @@ public class PickerController: UIViewController {
         prepareToPresent()
     }
     
+    // swiftlint:disable:next function_body_length
     private func prepareToPresent() {
         
         let pickerView = pickerViewToShow()

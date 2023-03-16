@@ -49,7 +49,7 @@ public class UalaCarouselCell: UICollectionViewCell {
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
-        contentView.applyFigmaShadow(color: UalaStyle.colors.grey40,
+        contentView.applyFigmaShadow(color: UalaStyle.colors.grey80,
                                      alpha: 0.1,
                                      xOffset: 0,
                                      yOffset: 2,

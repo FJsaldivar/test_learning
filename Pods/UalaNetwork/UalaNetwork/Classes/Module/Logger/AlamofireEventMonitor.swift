@@ -21,6 +21,6 @@ final class AlamofireEventLogger: EventMonitor {
     }
     
     func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
-        NSLog("⚡️ Response Received: \(response.debugDescription)")
+        NSLog("⚡️ Response Received:", response.debugDescription)
     }
 }

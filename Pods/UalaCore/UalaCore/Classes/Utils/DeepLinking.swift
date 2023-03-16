@@ -29,6 +29,7 @@ public enum DeepLinkIntent {
     case goToTransactionDetail(_ id: String)
     case goToNPS(_ id: String)
     case goToAccountInstructions
+    case goToCreditCardRequest
 
     private func makeURL(scheme: DeepLinkURLs? = .schemeURL ,
                          host: DeepLinkURLs? = .hostURL,
@@ -73,6 +74,8 @@ public enum DeepLinkIntent {
             return makeURL(path: .MGM_INVITE)
         case .goToAccountInstructions:
             return makeURL(path: .accountInstructions)
+        case .goToCreditCardRequest:
+            return makeURL(path: .creditCardRequest)
         }
     }
 }
@@ -150,6 +153,13 @@ public enum DeepLinkURLs: String {
     
     // MARK: VirtualKey
     case accountInstructions = "/VirtualKey"
+    
+    // MARK: Credit Card
+    case creditCardRequest =  "/tarjeta-credito/solicitud"
+
+    // MARK: Onboarding
+    case upgradeN4 = "/upgrade-n4"
+    case upgradeERA = "/upgrade-era"
 
     public func getIndex() -> Int {
         switch self {

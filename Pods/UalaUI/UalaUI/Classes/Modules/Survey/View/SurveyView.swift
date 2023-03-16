@@ -122,7 +122,7 @@ extension SurveyView: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension SurveyView: answerSelectionProtocol {
+extension SurveyView: AnswerSelectionProtocol {
     func selected(answer: AnswerChoice?) {
         guard let answer = answer else {
             return

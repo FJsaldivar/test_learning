@@ -21,5 +21,4 @@ public extension MFAScreenRouterType {
     func goToErrorView() {
         // Empty default implementation
     }
-
 }

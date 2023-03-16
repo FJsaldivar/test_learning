@@ -15,13 +15,13 @@ public protocol Theme {
     func borderWidth(border: BorderWidth) -> BorderWidth
     func addShadow(to view: UIView)
     func addCornerRadius(to view: UIView)
-    func toggleThemedModel() -> UIFareSwitchModel
-    func buttonTheme(for type: UIFareButtonType) -> ButtonTheme
-    func cardTheme(cardType: UIFareCardType) -> UIFareCardModel
-    func tagThemedModel(status: UIFareTagStatus, size: ComponentSize) -> UIFareTagModel
-    func radioButtonTheme() -> UIFareRadioButtonModel
-    func checkboxTheme() -> UIFareCheckboxModel
-    func themedDynamicInformationCellModel(for type: UIFareCellType) -> UIFareCellModel
+    func toggleThemedModel() -> AbraSwitchTheme
+    func buttonTheme(for type: AbraButtonType) -> AbraButtonTheme
+    func cardTheme(cardType: AbraCardType) -> AbraCardModel
+    func tagThemedModel(status: AbraTagStatus, size: ComponentSize) -> AbraTagTheme
+    func radioButtonTheme() -> AbraRadioButtonTheme
+    func checkboxTheme() -> AbraCheckboxTheme
+    func themedDynamicInformationCellModel(for type: AbraCellType) -> AbraCellThemedModel
     // Inputs
     func textFieldTheme(placeholder: String?, rightIcon: Icon?, leftIcon: Icon?) -> TextFieldTheme
     func inputHelperTheme() -> InputHelperTheme
@@ -30,6 +30,7 @@ public protocol Theme {
     func inputAmountTheme(title: String?, fieldType: AmountFieldType, helperText: String?, helperType: InputHelperType?, currencySymbol: String, currencyLocaleIdentifier: String) -> InputAmountTheme
     func amountFieldTheme(fieldType: AmountFieldType, currencySymbol: String, currencyLocaleIdentifier: String) -> AmountFieldTheme
     func inputCodeField(length: Int, keyboardType: UIKeyboardType, isSecureText: Bool, helperText: String?, helperType: InputHelperType?) -> InputCodeTheme
-    func tabBarControllerTheme() -> UIFareTabBarControllerTheme
+    func tabBarControllerTheme() -> AbraTabBarControllerTheme
     func navigationBarAppearance(barType: NavigationBarType) -> NavigationBarAppearance
+    func alertViewTheme(alertType: AbraAlertViewType) -> AbraAlertViewTheme
 }

@@ -11,10 +11,10 @@ public protocol ThemeManager: Theme, AnyObject {
     func updateTheme(to theme: AvailableThemes)
 }
 
-public final class MainThemeManager: ThemeManager {
+public final class AbraThemeManager: ThemeManager {
     private var currentTheme: Theme
     public static let themeUpdateNotificationName = Notification.Name(rawValue: "UalaThemeUpdated")
-    public static let shared: ThemeManager = MainThemeManager()
+    public static let theme: ThemeManager = AbraThemeManager()
     
     private init() {
         self.currentTheme = AvailableThemes.light.theme
@@ -53,15 +53,15 @@ public final class MainThemeManager: ThemeManager {
         notifyThemeUpdate()
     }
     
-    public func toggleThemedModel() -> UIFareSwitchModel {
+    public func toggleThemedModel() -> AbraSwitchTheme {
         currentTheme.toggleThemedModel()
     }
     
-    public func tagThemedModel(status: UIFareTagStatus, size: ComponentSize) -> UIFareTagModel {
+    public func tagThemedModel(status: AbraTagStatus, size: ComponentSize) -> AbraTagTheme {
         currentTheme.tagThemedModel(status: status, size: size)
     }
     
-    public func buttonTheme(for type: UIFareButtonType) -> ButtonTheme {
+    public func buttonTheme(for type: AbraButtonType) -> AbraButtonTheme {
         currentTheme.buttonTheme(for: type)
     }
     
@@ -93,28 +93,32 @@ public final class MainThemeManager: ThemeManager {
         currentTheme.inputCodeField(length: length, keyboardType: keyboardType, isSecureText: isSecureText, helperText: helperText, helperType: helperType)
     }
     
-    public func radioButtonTheme() -> UIFareRadioButtonModel {
+    public func radioButtonTheme() -> AbraRadioButtonTheme {
         currentTheme.radioButtonTheme()
     }
     
-    public func checkboxTheme() -> UIFareCheckboxModel {
+    public func checkboxTheme() -> AbraCheckboxTheme {
         currentTheme.checkboxTheme()
     }
     
-    public func themedDynamicInformationCellModel(for type: UIFareCellType) -> UIFareCellModel {
+    public func themedDynamicInformationCellModel(for type: AbraCellType) -> AbraCellThemedModel {
         currentTheme.themedDynamicInformationCellModel(for: type)
     }
     
-    public func cardTheme(cardType: UIFareCardType) -> UIFareCardModel {
+    public func cardTheme(cardType: AbraCardType) -> AbraCardModel {
         currentTheme.cardTheme(cardType: cardType)
     }
     
-    public func tabBarControllerTheme() -> UIFareTabBarControllerTheme {
+    public func tabBarControllerTheme() -> AbraTabBarControllerTheme {
         return currentTheme.tabBarControllerTheme()
     }
     
     public func navigationBarAppearance(barType: NavigationBarType) -> NavigationBarAppearance {
         return currentTheme.navigationBarAppearance(barType: barType)
+    }
+    
+    public func alertViewTheme(alertType: AbraAlertViewType) -> AbraAlertViewTheme {
+        return currentTheme.alertViewTheme(alertType: alertType)
     }
     
     private func notifyThemeUpdate() {

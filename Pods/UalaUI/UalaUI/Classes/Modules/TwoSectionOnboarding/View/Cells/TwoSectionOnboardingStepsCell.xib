@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,28 +18,35 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-Ae-viH">
-                        <rect key="frame" x="24" y="0.0" width="272" height="90"/>
+                        <rect key="frame" x="24" y="0.0" width="272" height="110"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="21Q-Ox-0PZ">
-                                <rect key="frame" x="0.0" y="0.0" width="272" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="66"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cWe-B6-YJT" userLabel="cellIcon">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="16" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mM3-Kc-FiM"/>
                                             <constraint firstAttribute="width" constant="50" id="x62-9H-8yz"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Banelco, elegí Extracciones, Cuenta Recargable y ¡listo!" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8A-QR-j21" userLabel="cellLabel">
-                                        <rect key="frame" x="66" y="0.0" width="206" height="50"/>
+                                        <rect key="frame" x="66" y="6" width="206" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="wpm-UH-ZeW"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="e8A-QR-j21" firstAttribute="top" secondItem="21Q-Ox-0PZ" secondAttribute="top" id="nxB-pT-w6D"/>
+                                    <constraint firstItem="cWe-B6-YJT" firstAttribute="centerY" secondItem="e8A-QR-j21" secondAttribute="centerY" id="thx-Yv-D3r"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2ZI-VM-Tv9">
-                                <rect key="frame" x="0.0" y="50" width="272" height="40"/>
+                                <rect key="frame" x="0.0" y="70" width="272" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mk1-kQ-qng">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
@@ -59,10 +66,12 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="110" id="zLy-QB-Krt"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="GOR-Ae-viH" secondAttribute="bottom" id="LHi-o6-867"/>
                     <constraint firstItem="GOR-Ae-viH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PzK-NE-5lZ"/>
                     <constraint firstAttribute="trailing" secondItem="GOR-Ae-viH" secondAttribute="trailing" constant="24" id="ekC-4E-X6M"/>
                     <constraint firstItem="GOR-Ae-viH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="rBQ-X0-5wN"/>

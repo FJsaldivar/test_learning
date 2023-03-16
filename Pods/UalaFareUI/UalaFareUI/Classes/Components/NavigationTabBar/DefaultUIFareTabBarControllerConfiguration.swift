@@ -5,7 +5,7 @@
 //  Created by Luis Perez on 30/09/22.
 //
 
-struct DefaultUIFareTabBarControllerConfiguration: UIFareTabBarControllerConfiguration {
+struct DefaultUIFareTabBarControllerConfiguration: AbraTabBarControllerConfiguration {
     var font: UIFont
     var iconTintColor: UIColor
     var textColor: UIColor

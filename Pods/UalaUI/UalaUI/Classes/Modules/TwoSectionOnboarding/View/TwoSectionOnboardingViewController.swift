@@ -154,9 +154,9 @@ extension TwoSectionOnboardingViewController: UITableViewDataSource, UITableView
         let buttonText = twoSectionOnboardingPresenter?.itemsInSection(indexPath.section)[indexPath.row].buttonText
         
         if buttonText.isEmpty {
-            return 80
+            return 90
         } else {
-            return 100
+            return 110
         }
     }
     

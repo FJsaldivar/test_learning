@@ -17,7 +17,7 @@ extension UILabel {
         }
         
         // We need to store the typography.
-        if let linkeableLabel = self as? UIFareLinkeableLabel {
+        if let linkeableLabel = self as? AbraLinkeableLabel {
             linkeableLabel.typography = typography
         }
         

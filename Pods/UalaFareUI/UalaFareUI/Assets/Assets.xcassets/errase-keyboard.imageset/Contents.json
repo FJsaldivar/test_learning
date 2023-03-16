@@ -1,0 +1,12 @@
+{
+    "images" : [
+        {
+        "filename" : "errase-keyboard.svg",
+        "idiom" : "universal"
+        }
+    ],
+    "info" : {
+        "author" : "xcode",
+        "version" : 1
+    }
+}

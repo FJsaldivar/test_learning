@@ -8,5 +8,13 @@
 public protocol PasswordCollectorRouterType: AnyObject {
     var view: PasswordCollectorViewType? { get set }
     
-    func executePrimaryAction()
+    @MainActor
+    func executePrimaryAction() async
+}
+
+public extension PasswordCollectorRouterType {
+    @MainActor
+    func executePrimaryAction() async {
+        // Empty Default implementation
+    }
 }

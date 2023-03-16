@@ -63,6 +63,8 @@
 	</dict>
 	<key>Develop</key>
 	<dict>
+		<key>BASE_URL_TRANSACTIONAL</key>
+		<string>https://transactional.api.dev.prepaid.ar.ua.la/</string>
 		<key>CASHOUT_BASE_PATH</key>
 		<string>https://services.uala.com.ar/dev/bancar/api/</string>
 		<key>BASE_URL_CARD_BFF</key>
@@ -123,9 +125,13 @@
 		<string>v1/auth/users/phone</string>
 		<key>BFF_POSTLOGIN</key>
 		<string>https://bff-post-login.api.dev.platform.ar.ua.la</string>
+		<key>BASE_URL_CARDONDEMAND_ARG</key>
+		<string>https://cards.api.dev.prepaid.ar.ua.la</string>
 	</dict>
 	<key>Stage</key>
 	<dict>
+		<key>BASE_URL_TRANSACTIONAL</key>
+		<string>https://transactional.api.stage.prepaid.ar.ua.la/</string>
 		<key>CASHOUT_BASE_PATH</key>
 		<string>https://services.uala.com.ar/stage/bancar/api/</string>
 		<key>BASE_URL_CARD_BFF</key>
@@ -188,9 +194,13 @@
 		<string>v1/auth/users/phone</string>
 		<key>BFF_POSTLOGIN</key>
 		<string>https://bff-post-login.api.stage.platform.ar.ua.la</string>
+		<key>BASE_URL_CARDONDEMAND_ARG</key>
+		<string>https://cards.api.stage.prepaid.ar.ua.la</string>
 	</dict>
 	<key>Production</key>
 	<dict>
+		<key>BASE_URL_TRANSACTIONAL</key>
+		<string>https://transactional.api.prod.prepaid.ar.ua.la/</string>
 		<key>CASHOUT_BASE_PATH</key>
 		<string>https://services.uala.com.ar/prod/bancar/api/</string>
 		<key>BASE_URL_CARD_BFF</key>
@@ -251,6 +261,8 @@
 		<string>v1/auth/users/phone</string>
 		<key>BFF_POSTLOGIN</key>
 		<string>https://bff-post-login.api.platform.ar.ua.la</string>
+		<key>BASE_URL_CARDONDEMAND_ARG</key>
+		<string>https://cards.api.prod.prepaid.ar.ua.la</string>
 	</dict>
 	<key>Constants</key>
 	<dict>

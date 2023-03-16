@@ -13,7 +13,7 @@ public class UalaTextField: UITextField {
     private var lineView: UIView!
     private var placeholderColor: UIColor!
     private var leftImageView: UIImageView?
-    private var rightIconButton: UIFareButton?
+    private var rightIconButton: AbraButton?
     
     private var theme: TextFieldTheme
     
@@ -103,8 +103,8 @@ public class UalaTextField: UITextField {
 
         if let rightIcon = theme.rightIcon {
             self.rightViewMode = .always
-            let buttonTheme = MainThemeManager.shared.buttonTheme(for: .iconOnly(isOnDarkBackground: false))
-            let rightIconButton = UIFareButton(theme: buttonTheme, frame: .zero)
+            let buttonTheme = AbraThemeManager.theme.buttonTheme(for: .iconOnly(isOnDarkBackground: false))
+            let rightIconButton = AbraButton(theme: buttonTheme, frame: .zero)
             rightIconButton.setImage(UIImage(withAsset: rightIcon), for: [])
             self.addSubview(rightIconButton)
             self.sendSubviewToBack(rightIconButton)
@@ -183,7 +183,7 @@ public class UalaTextField: UITextField {
     private func disableIconsIfNeeded(_ shouldDisable: Bool) {
         guard let leftStackView = leftView as? UIStackView,
               let leftUIImageView = leftStackView.arrangedSubviews[1] as? UIImageView,
-              let rightButton = rightView as? UIFareButton else {
+              let rightButton = rightView as? AbraButton else {
             return
         }
         

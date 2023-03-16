@@ -25,11 +25,13 @@
 		<string>nW8aupqelOIoqL0qGmI9ZYntoHWd7836</string>
 		<key>TEST_CONFIG_KEY</key>
 		<string>argbank_dev</string>
-        <key>BFF_POSTLOGIN</key>
-        <string>https://bff-post-login.api.dev.bank-platform.ar.ua.la</string>
+		<key>BFF_POSTLOGIN</key>
+		<string>https://bff-post-login.api.dev.bank-platform.ar.ua.la</string>
 	</dict>
 	<key>Develop</key>
 	<dict>
+		<key>BASE_URL_TRANSACTIONAL</key>
+		<string>https://transactional.api.dev.prepaid.ar.ua.la/</string>
 		<key>BASE_URL_DEBIT</key>
 		<string>https://debit.api.dev.debit.ar.ua.la</string>
 		<key>BFF_ONBOARDING</key>
@@ -46,11 +48,13 @@
 		<string>nW8aupqelOIoqL0qGmI9ZYntoHWd7836</string>
 		<key>TEST_CONFIG_KEY</key>
 		<string>argbank_dev</string>
-        <key>BFF_POSTLOGIN</key>
-        <string>https://bff-post-login.api.dev.bank-platform.ar.ua.la</string>
+		<key>BFF_POSTLOGIN</key>
+		<string>https://bff-post-login.api.dev.bank-platform.ar.ua.la</string>
 	</dict>
 	<key>Stage</key>
 	<dict>
+		<key>BASE_URL_TRANSACTIONAL</key>
+		<string>https://transactional.api.stage.prepaid.ar.ua.la/</string>
 		<key>BASE_URL_DEBIT</key>
 		<string>https://debit.api.stage.debit.ar.ua.la</string>
 		<key>BFF_ONBOARDING</key>
@@ -67,11 +71,13 @@
 		<string>cKTD0GY1g9EEdJDcRwO3Vv9uJis60FnD</string>
 		<key>TEST_CONFIG_KEY</key>
 		<string>argbank_stage</string>
-        <key>BFF_POSTLOGIN</key>
-        <string>https://bff-post-login.api.stage.bank-platform.ar.ua.la</string>
+		<key>BFF_POSTLOGIN</key>
+		<string>https://bff-post-login.api.stage.bank-platform.ar.ua.la</string>
 	</dict>
 	<key>Production</key>
 	<dict>
+		<key>BASE_URL_TRANSACTIONAL</key>
+		<string>https://transactional.api.prod.prepaid.ar.ua.la/</string>
 		<key>BASE_URL_DEBIT</key>
 		<string>https://debit.api.debit.ar.ua.la</string>
 		<key>BFF_ONBOARDING</key>
@@ -88,8 +94,8 @@
 		<string>TUArVrPCzg1Fm7jnQUkAzTcsU4J5Tinh</string>
 		<key>TEST_CONFIG_KEY</key>
 		<string>argbank_prod</string>
-        <key>BFF_POSTLOGIN</key>
-        <string>https://bff-post-login.api.bank-platform.ar.ua.la</string>
+		<key>BFF_POSTLOGIN</key>
+		<string>https://bff-post-login.api.bank-platform.ar.ua.la</string>
 	</dict>
 </dict>
 </plist>

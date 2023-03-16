@@ -116,6 +116,7 @@ extension Auth: Credentials {
         }
     }
     
+    // swiftlint:disable:next function_body_length
     func login(username: String, password: String) -> Promise<Void> {
         return Promise { seal in
             let parameters: [String: String] = getLoginParameters()

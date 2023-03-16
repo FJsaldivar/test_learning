@@ -17,8 +17,9 @@ public extension UIStackView {
         self.spacing = spacing
     }
     
-    public func add(arrangedSubviews subviews: [UIView]) {
+    public func add(arrangedSubviews subviews: [UIView?]) {
         for subview in subviews {
+            guard let subview = subview else { continue }
             addArrangedSubview(subview)
         }
     }

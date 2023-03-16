@@ -28,6 +28,7 @@
 		98BCC0C8292E83FD0080ED80 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCC0C7292E83FD0080ED80 /* Loader.swift */; };
 		D5055935EAE910FA65E0866B /* Pods_SOLID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DA9712D727A71581C474EC /* Pods_SOLID.framework */; };
 		E6791D547F8DC7DE96CF8B62 /* Pods_SOLIDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38B806245F5448EEB45B1A7 /* Pods_SOLIDTests.framework */; };
+		F25ACFA829C3BB01007BF1AF /* LoginEventsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25ACFA729C3BB01007BF1AF /* LoginEventsTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		98BCC0C7292E83FD0080ED80 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		A35D9B95A654536D52832F87 /* Pods-SOLIDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOLIDTests.debug.xcconfig"; path = "Target Support Files/Pods-SOLIDTests/Pods-SOLIDTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB098D088AFF0B81B16376DD /* Pods-SOLID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOLID.debug.xcconfig"; path = "Target Support Files/Pods-SOLID/Pods-SOLID.debug.xcconfig"; sourceTree = "<group>"; };
+		F25ACFA729C3BB01007BF1AF /* LoginEventsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEventsTest.swift; sourceTree = "<group>"; };
 		F38B806245F5448EEB45B1A7 /* Pods_SOLIDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOLIDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DA9712D727A71581C474EC /* Pods_SOLID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOLID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				98BCC083292E79980080ED80 /* SOLIDTests.swift */,
+				F25ACFA729C3BB01007BF1AF /* LoginEventsTest.swift */,
 			);
 			path = SOLIDTests;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				98BCC07B292E79980080ED80 /* Sources */,
 				98BCC07C292E79980080ED80 /* Frameworks */,
 				98BCC07D292E79980080ED80 /* Resources */,
+				EDF1065344C538452504D4E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -473,6 +477,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EDF1065344C538452504D4E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOLIDTests/Pods-SOLIDTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOLIDTests/Pods-SOLIDTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SOLIDTests/Pods-SOLIDTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F2461785FB120FA3F99B05B2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -516,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25ACFA829C3BB01007BF1AF /* LoginEventsTest.swift in Sources */,
 				98BCC084292E79980080ED80 /* SOLIDTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,7 +716,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -724,7 +746,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -748,7 +770,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G38NNHTK29;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uala.labs.SOLIDTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -769,7 +791,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G38NNHTK29;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uala.labs.SOLIDTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

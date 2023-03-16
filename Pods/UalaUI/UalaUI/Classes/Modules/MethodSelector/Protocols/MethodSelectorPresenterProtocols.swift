@@ -17,6 +17,6 @@ public protocol MethodSelectorPresenterType {
 public extension MethodSelectorPresenterType {
 
     func selected(_ item: MethodSelectorCellModelType) {
-        //Empty default implementation
+        // Empty default implementation
     }
 }

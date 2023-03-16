@@ -7,16 +7,14 @@
 
 import UIKit
 
+/// The types of the custom navigation bars
 public enum NavigationBarType {
-    case lightBackground(topImage: UIImage? = nil)
-    case darkBackground(topImage: UIImage? = nil)
+    case regular(topImage: UIImage? = nil, isInverted: Bool = false)
     case home
     
     internal var topImage: UIImage? {
         switch self {
-        case .lightBackground(let topImage):
-            return topImage
-        case .darkBackground(let topImage):
+        case .regular(let topImage, _):
             return topImage
         default:
             return nil
@@ -32,14 +30,15 @@ public extension UIViewController {
         return nil
     }
     
-    func configureNavigationBar(type: NavigationBarType, theme: Theme = MainThemeManager.shared) {
+    func configureNavigationBar(type: NavigationBarType, theme: Theme = AbraThemeManager.theme) {
         let baseAppearance = theme.navigationBarAppearance(barType: type)
+        setStatusBarAppearance(navigationBarType: type)
         removeBackTitleFromPreviousController()
         navigationItem.titleView = nil
         navigationItem.backButtonTitle = ""
         
         switch type {
-        case .lightBackground, .darkBackground:
+        case .regular:
             self.navigationController?.navigationBar.tintColor = baseAppearance.iconTintColor
             self.navigationItem.standardAppearance = darkBarAppearance(baseAppearance: baseAppearance)
             self.navigationItem.compactAppearance = darkBarAppearance(baseAppearance: baseAppearance)
@@ -125,6 +124,21 @@ public extension UIViewController {
         }
         
         return font
+    }
+    
+    private func setStatusBarAppearance(navigationBarType: NavigationBarType) {
+        guard let abraNavigationController = self.navigationController as? AbraNavigationController else { return }
+        
+        switch navigationBarType {
+        case .regular(_, let isInverted):
+            if isInverted {
+                abraNavigationController.customStatusBarStyle = .lightContent
+            } else {
+                abraNavigationController.customStatusBarStyle = .darkContent
+            }
+        case .home:
+            abraNavigationController.customStatusBarStyle = .lightContent
+        }
     }
     
     private func findSubview<T>(ofType: T.Type, in view: UIView) -> T? {

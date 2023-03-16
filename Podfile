@@ -7,17 +7,17 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'SOLID' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for SOLID
-  pod 'UalaAuth/LoginDemo'
+  pod 'UalaAuth/LoginDemo', '0.4.19'
   target 'SOLIDTests' do
     inherit! :search_paths
+    pod 'UalaTesting', :git => 'git@github.com:Bancar/uala-testing-ios.git', :branch => 'develop'
     # Pods for testing
   end
-
+  
   target 'SOLIDUITests' do
     # Pods for testing
   end
-
+  
 end
-
