@@ -18,7 +18,6 @@ public enum AuthWrapperError: Error {
     case notImplemented
 }
 
-// swiftlint:disable:next type_body_length
 final class AuthCognitoWrapper: Credentials {
     private let userPool: AWSCognitoIdentityUserPool
     private var authConfig: AuthConfig
@@ -187,8 +186,6 @@ final class AuthCognitoWrapper: Credentials {
             ualaError = UalaError.accountBlocked
         } else if authError.isOutdatedAppVersion {
             ualaError = UalaError.outdatedAppVersion
-        } else if authError.isInvalidCredentials {
-            ualaError = UalaError.invalidGrant
         }
 
         return ualaError

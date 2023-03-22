@@ -1,6 +1,0 @@
-framework module UalaAnalytics {
-  umbrella header "UalaAnalytics-umbrella.h"
-
-  export *
-  module * { export * }
-}

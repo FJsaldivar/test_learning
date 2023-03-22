@@ -10,6 +10,7 @@ target 'SOLID' do
   
   # Pods for SOLID
   pod 'UalaAuth/LoginDemo', '0.4.19'
+  pod 'UalaCore', '3.10.32'
   target 'SOLIDTests' do
     inherit! :search_paths
     pod 'UalaTesting', :git => 'git@github.com:Bancar/uala-testing-ios.git', :branch => 'develop'

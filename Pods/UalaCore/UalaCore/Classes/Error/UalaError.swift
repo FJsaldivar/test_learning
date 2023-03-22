@@ -187,7 +187,6 @@ public enum UalaError: String, Error {
     case balanceInsufficient
     case invalidPinCode = "INVALID_PIN_CODE"
     case phoneNumberNotExist = "PHONE_NUMBER_NOT_EXIST"
-    case nonOwnerAccountDebin = "Esta cuenta no está a tu nombre"
     
     // Places Search
     case invalidNearbyATMSearch = "No hemos podido realizar la búsqueda de cajeros cercanos"
@@ -266,7 +265,6 @@ public enum UalaError: String, Error {
     case auth0InusualActivity = "LOGOUT_TIMEOUT_ALERT"
     case accountBlocked
     case outdatedAppVersion
-    case invalidGrant
 
     // TOKEN
     case dailyTokenLimit
@@ -368,8 +366,6 @@ extension UalaError {
                 return .consultTokenFailed
             case 125:
                 return .noUalaEmailError
-            case 5000:
-                return .nonOwnerAccountDebin
             default:
                 return .internalServerError
             }
@@ -450,7 +446,6 @@ extension UalaError {
         case 5001: self = UalaError.emailAlreadyRegistered
         case 1006: self = UalaError.phoneNumberNotExist
         case 125: self = UalaError.noUalaEmailError
-        case 5000: self = UalaError.nonOwnerAccountDebin
         default: self = UalaError.undefined
         }
     }

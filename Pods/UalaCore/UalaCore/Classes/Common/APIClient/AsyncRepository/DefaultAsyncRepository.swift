@@ -10,17 +10,14 @@ public final class DefaultAsyncRepository: AsyncRepository {
     private let apiClient: APIClient
     private let tokenProvider: AuthorizationTokenProvider?
     private let defaultErrorMapper: APIResponseErrorMapper
-    private let monitor: AsyncRepositoryMonitorType?
     
     public init(client: APIClient,
                 tokenProvider: AuthorizationTokenProvider?,
-                defaultErrorMapper: APIResponseErrorMapper,
-                monitor: AsyncRepositoryMonitorType? = nil) {
+                defaultErrorMapper: APIResponseErrorMapper) {
         
         self.apiClient = client
         self.tokenProvider = tokenProvider
         self.defaultErrorMapper = defaultErrorMapper
-        self.monitor = monitor
     }
     
     public convenience init(enableLogging: Bool = false) {
@@ -31,17 +28,7 @@ public final class DefaultAsyncRepository: AsyncRepository {
     }
     
     public convenience init(enableLogging: Bool = false,
-                            tokenProvider: AuthorizationTokenProvider,
-                            monitor: AsyncRepositoryMonitorType? = nil) {
-        
-        self.init(client: AlamofireAPIClient(enableLogging: enableLogging),
-                  tokenProvider: tokenProvider,
-                  defaultErrorMapper: DefaultAPIClientErrorMapper(),
-                  monitor: monitor)
-    }
-    
-    public convenience init(enableLogging: Bool = false,
-                            tokenProvider: AuthorizationTokenProvider) {
+                     tokenProvider: AuthorizationTokenProvider) {
         
         self.init(client: AlamofireAPIClient(enableLogging: enableLogging),
                   tokenProvider: tokenProvider,
@@ -49,12 +36,12 @@ public final class DefaultAsyncRepository: AsyncRepository {
     }
     
     public func request<Response: Decodable>(request: UalaCore.APIRequest,
-                                             responseType: Response.Type,
-                                             retries: Int = 0) async throws -> Response {
+                                  responseType: Response.Type,
+                                  retries: Int = 0) async throws -> Response {
         
         return try await processRequestDependingOnType(request: request,
-                                                       responseType: responseType,
-                                                       retries: retries)
+                                      responseType: responseType,
+                                      retries: retries)
     }
     
     public func requestData(request: UalaCore.APIRequest,
@@ -71,8 +58,8 @@ public final class DefaultAsyncRepository: AsyncRepository {
     }
     
     private func processRequestDependingOnType<Response>(request: UalaCore.APIRequest,
-                                                         responseType: Response.Type,
-                                                         retries: Int = 0) async throws -> Response {
+                                                       responseType: Response.Type,
+                                                       retries: Int = 0) async throws -> Response {
         if request.authorizationType == .none {
             return try await processRequest(request: request,
                                             responseType: responseType,
@@ -85,8 +72,8 @@ public final class DefaultAsyncRepository: AsyncRepository {
     }
     
     private func authorizedRequest<Response>(request: UalaCore.APIRequest,
-                                             responseType: Response.Type,
-                                             retries: Int = 0) async throws -> Response {
+                                            responseType: Response.Type,
+                                            retries: Int = 0) async throws -> Response {
         
         guard let tokenProvider = tokenProvider else {
             throw APIClientError.missingAuthorizationToken
@@ -97,7 +84,7 @@ public final class DefaultAsyncRepository: AsyncRepository {
         
         if mutableRequest.headers != nil {
             mutableRequest.headers?.merge(request.authorizationType.authorizationHeader(token: token),
-                                          uniquingKeysWith: { current, _ in current })
+                                   uniquingKeysWith: { current, _ in current })
         } else {
             mutableRequest.headers = request.authorizationType.authorizationHeader(token: token)
         }
@@ -123,17 +110,13 @@ public final class DefaultAsyncRepository: AsyncRepository {
     }
     
     private func processRequestDecodable<Response>(request: UalaCore.APIRequest,
-                                                   responseType: Response.Type,
-                                                   retries: Int) async throws -> Response {
+                                          responseType: Response.Type,
+                                          retries: Int) async throws -> Response {
         
         switch await apiClient.processRequest(request, retries: retries) {
         case .success(let responseData):
-            let model = AsyncRepositoryMonitor(api: request, data: responseData)
-            await monitor?.execute(succes: true, model: model)
             return try request.responseDecoder.decode(type: responseType, from: responseData)
         case .failure(let error):
-            let model = AsyncRepositoryMonitor(api: request, data: error.responseData)
-            await monitor?.execute(succes: false, model: model)
             throw defaultErrorMapper.mapError(error: error, requestErrorMapper: request.errorMapper)
         }
     }
@@ -142,12 +125,8 @@ public final class DefaultAsyncRepository: AsyncRepository {
         
         switch await apiClient.processRequest(request, retries: retries) {
         case .success(let responseData):
-            let model = AsyncRepositoryMonitor(api: request, data: responseData)
-            await monitor?.execute(succes: true, model: model)
             return responseData
         case .failure(let error):
-            let model = AsyncRepositoryMonitor(api: request, data: error.responseData)
-            await monitor?.execute(succes: false, model: model)
             throw defaultErrorMapper.mapError(error: error, requestErrorMapper: request.errorMapper)
         }
     }

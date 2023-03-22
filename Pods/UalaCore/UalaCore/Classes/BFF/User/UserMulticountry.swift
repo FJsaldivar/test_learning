@@ -7,14 +7,14 @@
 
 // MARK: - UserMulticountry
 public struct UserMulticountry: Codable {
-    public let accountDocumentID, accountID: String?
-    public let address: AddressMulticountry?
+    let accountDocumentID, accountID: String?
+    let address: AddressMulticountry?
     let avatarPicture: String?
     let bankData: BankDataClass?
     let birthDate, birthEntity, birthPlace, clabe: String?
     let contractSign, coordinates, createdDate: String?
     let crs: Bool?
-    public let deliveryAddress: AddressMulticountry?
+    let deliveryAddress: AddressMulticountry?
     let documentID, documentType, email, expeditionDate: String?
     let expirationDate, externalAccountID, externalID: String?
     let fatca: Bool?
@@ -31,8 +31,7 @@ public struct UserMulticountry: Codable {
     let personalDataTreatmentAcceptanceDate, phoneNumber, phoneNumberCountryCode, privacySign: String?
     let secondLastName, secondName, selfiePicture, sensitiveDataTreatmentAcceptanceDate: String?
     let soDocs: Bool?
-    let status, taxDocument, updatedDate: String?
-    public let userID: String?
+    let status, taxDocument, updatedDate, userID: String?
     let userName, userType: String?
     let specialCondition, belongsToCollective: String?
 
@@ -96,11 +95,11 @@ public struct UserMulticountry: Codable {
 }
 
 // MARK: - Address
-public struct AddressMulticountry: Codable {
-    public let addressNumber, addressReference, apartment, city: String?
-    public let floor, observations, province, state: String?
-    public let street, streetNumber, zipCode, colony: String?
-    public let delegation, externalNumber: String?
+struct AddressMulticountry: Codable {
+    let addressNumber, addressReference, apartment, city: String?
+    let floor, observations, province, state: String?
+    let street, streetNumber, zipCode, colony: String?
+    let delegation, externalNumber: String?
 
     enum CodingKeys: String, CodingKey {
         case addressNumber = "AddressNumber"

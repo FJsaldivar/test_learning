@@ -13,7 +13,7 @@ public enum StringTables: String {
     case Common, Core, Investments, Loans, PinFlow, Transactions, SignUp,
          Exchange, AccountCharge, Transfers, Acquiring, UalaHelp, Cards,
          Loyalty, Portfolio, Taxes, Crypto, Remittances, Insurance,
-         UalaSoftoken, Cedears, Tracking, Payments, CreditCard, Accounts, Cashout
+         UalaSoftoken, Cedears, Tracking, Payments, CreditCard, Accounts
 }
 
 public func translate(_ key: String, from table: StringTables? = nil) -> String {

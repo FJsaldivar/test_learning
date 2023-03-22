@@ -87,7 +87,6 @@ public class BaseApiManager {
         return credentials.getUserInfo(mapper: mapper)
     }
     
-    // swiftlint:disable:next function_body_length
     public func request<T>(_ router: Routeable, token: String? = nil, body: [String: String]? = nil) -> Promise<T> {
         guard var request = try? router.asURLRequest(token: token) else {
             return Promise.init(error: UalaError.undefined)

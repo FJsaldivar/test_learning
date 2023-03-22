@@ -25,8 +25,7 @@ public class BundleUtils {
                    "Payments": "org.cocoapods.UalaPayments",
                    "Cedears": "org.cocoapods.UalaCedears",
                    "CreditCard": "org.cocoapods.UalaCreditCard",
-                   "Accounts": "org.cocoapods.UalaAccounts",
-                   "Cashout": "org.cocoapods.UalaCashout"]
+                   "Accounts": "org.cocoapods.UalaAccounts"]
 
         guard let stringTable = table?.rawValue,
               let identifier = map[stringTable],

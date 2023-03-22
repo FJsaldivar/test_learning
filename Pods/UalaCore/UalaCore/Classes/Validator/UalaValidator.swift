@@ -315,13 +315,6 @@ public class UalaValidator: PasswordValidator {
         return cbuCount.validate(rules: rules)
     }
     
-    public func validate(cbuAliasCount: String) -> ValidationResult {
-        var rules = ValidationRuleSet<String>()
-        rules.add(rule: ValidationRuleLength(min: 6, max: 22, error: UalaError.cbuInvalidCount))
-        
-        return cbuAliasCount.validate(rules: rules)
-    }
-    
     public func validate(redeemCode: String) -> ValidationResult {
         var rules = ValidationRuleSet<String>()
         rules.add(rule: ValidationRulePattern(pattern: UalaValidationPattern.amount, error: UalaError.redeemCodeInvalid))

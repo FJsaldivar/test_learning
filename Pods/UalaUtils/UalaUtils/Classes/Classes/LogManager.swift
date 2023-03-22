@@ -13,7 +13,7 @@ public class LogManager: NSObject {
     
     public static let shared: LogManager = LogManager()
     
-    public override init() { }
+    private override init() { }
     
     public var showLogs: Bool = false
     
