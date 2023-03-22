@@ -17,6 +17,8 @@ final class LoginEventsTest: XCTestCase {
     func makeSut() async -> (LoginEvents, (MockLogManager, MockLoginStatus)) {
         let mockLogManager = MockLogManager()
         let mockLoginStatus = MockLoginStatus()
+        let enviroment = EnvironmentBuilder.create(.stage, .Argentina)
+        CoreStarter.start(environment: enviroment)
         let sut = LoginEvents(logManager: mockLogManager, loginStatus: mockLoginStatus)
         return (sut,(mockLogManager, mockLoginStatus))
     }
@@ -31,6 +33,16 @@ final class LoginEventsTest: XCTestCase {
         
         XCTAssertEqual(mockLogManager.debugSpy.invokedCount, 2)
         XCTAssertEqual(mockLoginStatus.setLoginStatusSpy.invokedCount, 1)
+        XCTAssertTrue(mockLoginStatus.setLoginStatusSpy.invokedParameters ?? false)
+    }
+    
+    func test_get() async throws {
+        let (sut,(mockLogManager, _)) = await makeSut()
+        let spectedError: Error = UalaError.internalServerError
+        
+        await sut.get(error: spectedError)
+        
+        XCTAssertEqual(spectedError.localizedDescription, mockLogManager.debugErrorSpy.invokedParameters??.localizedDescription)
     }
 }
 
