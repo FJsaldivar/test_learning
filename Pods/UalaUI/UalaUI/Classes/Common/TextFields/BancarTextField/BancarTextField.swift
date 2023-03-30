@@ -65,13 +65,6 @@ open class BancarTextField: UITextField {
         customizeUI()
     }
 
-    // MARK: - UI Initialization
-
-    override public func draw(_ rect: CGRect) {
-        super.draw(rect)
-        configure()
-    }
-
     open func customize(style: BancarTextFieldStyle) {
         self.style = style
         font = style.font
@@ -103,6 +96,7 @@ open class BancarTextField: UITextField {
 
         customizeConstraints()
         customizeLabel()
+        configure()
     }
     
     open func configure() {

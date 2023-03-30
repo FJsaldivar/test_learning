@@ -28,7 +28,7 @@ PODS:
   - Shimmer (1.0.2)
   - SimpleKeychain (0.12.5)
   - Split (2.5.3)
-  - SwiftLint (0.50.3)
+  - SwiftLint (0.51.0)
   - SwiftyJSON (4.2.0)
   - TextFieldEffects (1.5.1)
   - UalaAuth/LoginDemo (0.4.19):
@@ -55,7 +55,7 @@ PODS:
     - SwiftLint
   - UalaTesting (0.1.0):
     - PromiseKit
-  - UalaUI (1.4.62):
+  - UalaUI (1.4.63):
     - Kingfisher (~> 5.2.0)
     - lottie-ios (~> 3.1.9)
     - PureLayout (~> 3.1.4)
@@ -63,7 +63,7 @@ PODS:
     - TextFieldEffects (~> 1.5.1)
     - UalaCore
     - UalaUtils
-  - UalaUtils (0.4.19):
+  - UalaUtils (0.4.20):
     - PromiseKit
   - Validator (3.2.1)
 
@@ -127,7 +127,7 @@ SPEC CHECKSUMS:
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SimpleKeychain: 8193a9e40967eccac933c1fde82de46c07a5ae26
   Split: 55866894ab4eec78126e502af06d50263801c25d
-  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  SwiftLint: 1b7561918a19e23bfed960e40759086e70f4dba5
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
   UalaAuth: 83eb819fcef0d72e6cc0d41dfce86a86ac0092a1
@@ -135,10 +135,10 @@ SPEC CHECKSUMS:
   UalaFareUI: a2e81fc1342d96670a13bf8e6609c9635fa0463f
   UalaNetwork: d357621bfe56b118dd831f2fb9b172c58a9fdc93
   UalaTesting: 517e6f8bba154d01e6c132a4e27ef6b0bc80f5bd
-  UalaUI: 6e9e1bd827fd967b734cd3baa89affe008e127ca
-  UalaUtils: 0bf08c88a572b4a8bbfafc3e61780d399146d447
+  UalaUI: 631c5e6b75fa82d565a6d1b268af3837bfc97da1
+  UalaUtils: 7b53756987cc3a41159fc7e6ec80fcac864b6aac
   Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
 
 PODFILE CHECKSUM: c9c20d49c36a277b57944c49776284af34637c5b
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.11.2

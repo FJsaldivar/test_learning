@@ -42,6 +42,10 @@ public protocol BaseLoadingView {
     func showLottieLoadingView(viewModel: LottieLoadingViewViewModelType)
     func hideLottieLoadingView(duration: TimeInterval, completion: (() -> Void)?)
     func hideLottieLoadingView()
+    @MainActor
+    func showLottieLoadingViewAsync(viewModel: LottieLoadingViewViewModelType)
+    @MainActor
+    func hideLottieLoadingViewAsync(duration: TimeInterval, completion: (() -> Void)?)
 }
 
 public protocol BaseAlertView {
@@ -64,6 +68,42 @@ extension BaseView {
 }
 
 extension UIViewController: BaseView {
+    @MainActor
+    public func showLottieLoadingViewAsync(viewModel: LottieLoadingViewViewModelType) {
+        guard lottieLoaderViewController == nil else {
+            return
+        }
+        
+        let loadingViewController = LottieLoadingViewController(viewModel: viewModel)
+        lottieLoaderViewController = loadingViewController
+        let containerViewController = getTopParent()
+ 
+        containerViewController.addChild(loadingViewController)
+        containerViewController.view.addSubview(loadingViewController.view)
+        loadingViewController.view.anchor(top: containerViewController.view.topAnchor,
+                                          leading: containerViewController.view.leadingAnchor,
+                                          bottom: containerViewController.view.bottomAnchor,
+                                          trailling: containerViewController.view.trailingAnchor)
+        loadingViewController.didMove(toParent: containerViewController)
+        loadingViewController.lottieView.play()
+    }
+    @MainActor
+    public func hideLottieLoadingViewAsync(duration: TimeInterval = 0.2, completion: (() -> Void)? = nil) {
+        guard let loadingViewController = lottieLoaderViewController else {
+            return
+        }
+    
+        loadingViewController.willMove(toParent: nil)
+        loadingViewController.removeFromParent()
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
+            loadingViewController.view.alpha = 0
+        }, completion: { [weak self] _ in
+            loadingViewController.view.removeFromSuperview()
+            self?.lottieLoaderViewController = nil
+            completion?()
+        })
+    }
     
     private struct AssociatedKey {
         static var lottieLoader = "lottieLoader"
@@ -112,6 +152,7 @@ extension UIViewController: BaseView {
         UalaLoader.sharedLoader.hide()
     }
     
+    @available(*, deprecated, message: "Use showLottieLoadingViewAsync, this is updated with MainActor")
     public func showLottieLoadingView(viewModel: LottieLoadingViewViewModelType) {
         guard lottieLoaderViewController == nil else {
             return
