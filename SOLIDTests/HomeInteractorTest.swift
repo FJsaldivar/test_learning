@@ -52,6 +52,36 @@ final class HomeInteractorTest: XCTestCase {
             }
         }
     }
+    
+    func test_get_user_success() throws {
+        let (sut,spy) = makeSut()
+        var userSpected = User(email: "")
+        spy.detailsSpy.stubbed = userSpected
+        
+        sut.getUser { result in
+            switch result {
+            case .success(let user):
+                XCTAssertEqual(user, userSpected)
+            case .failure(_):
+                XCTFail()
+            }
+        }
+    }
+    
+    func test_get_user_failure() throws {
+        let (sut,spy) = makeSut()
+        var errorSpected = UalaError.undefined
+        spy.detailsSpy.error = errorSpected
+        
+        sut.getUser { result in
+            switch result {
+            case .success(_):
+                XCTFail()
+            case .failure(let error):
+                XCTAssertEqual(error.localizedDescription, spy.detailsSpy.error?.localizedDescription)
+            }
+        }
+    }
 }
 
 class MockProfileRepository: ProfileRepository {
@@ -70,3 +100,10 @@ class MockProfileRepository: ProfileRepository {
 class MockAPIManager: BaseApiManager {}
 
 extension Balance: UalaDummy {}
+
+extension User: Equatable {
+    public static func == (lhs: UalaCore.User, rhs: UalaCore.User) -> Bool {
+        return lhs.email == rhs.email && lhs.userId == rhs.userId
+    }
+}
+

@@ -11207,6 +11207,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		02F9C74245A87460987EC2EE4986EAD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9571CE9409E47DC990C0B7441483AD16 /* UalaUI.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaUI";
+				IBSC_MODULE = UalaUI;
+				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-LottieAssets-UalaUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = LottieAssets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		037B0C30D42100F2AE8E5F9AE66FF5DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9401FBCE24DB9A4D223E7471A62BCC8 /* Pods-SOLIDTests.release.xcconfig */;
@@ -11384,21 +11401,22 @@
 			};
 			name = Debug;
 		};
-		0F2B29505CEC9333CF763A18F90CC93A /* Release */ = {
+		0FE8F0277A407F920F27610E0759CC32 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 723A45561A3C8D04F672596A72D12984 /* UalaCore.release.xcconfig */;
+			baseConfigurationReference = 1BBCF8EF76C586A8AF7D5D8E98E5BC25 /* UalaUI.debug.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaCore";
-				IBSC_MODULE = UalaCore;
-				INFOPLIST_FILE = "Target Support Files/UalaCore/ResourceBundle-Core-UalaCore-Info.plist";
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaUI";
+				IBSC_MODULE = UalaUI;
+				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-LottieAssets-UalaUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = Core;
+				PRODUCT_NAME = LottieAssets;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
 		1B3A9CBB929C5B172B1138C86AF65047 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -11653,22 +11671,6 @@
 			};
 			name = Debug;
 		};
-		2771BA181B66E6EA23CB1E96D0537CD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CA1EC995DCC83BFA7C31692E6703009 /* UalaFareUI.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
-				IBSC_MODULE = UalaFareUI;
-				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIImages-UalaFareUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = UalaFareUIImages;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		309AC481ABEB605F3A05B9516E3499E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65B0841C781669871EC76B09F804B043 /* Kingfisher.release.xcconfig */;
@@ -11867,6 +11869,23 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		42B42227CD773A8191FBB41BFC30E954 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F28FC73E879317638D23CC776C20F4A9 /* UalaCore.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaCore";
+				IBSC_MODULE = UalaCore;
+				INFOPLIST_FILE = "Target Support Files/UalaCore/ResourceBundle-Core-UalaCore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = Core;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -12251,22 +12270,6 @@
 			};
 			name = Debug;
 		};
-		69101941D7A8F3C847C3DB5E04A964B3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BBCF8EF76C586A8AF7D5D8E98E5BC25 /* UalaUI.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaUI";
-				IBSC_MODULE = UalaUI;
-				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-Common-UalaUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = Common;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		6BBB1DAB8347E1DD820DA5A217F7D6E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BBCF8EF76C586A8AF7D5D8E98E5BC25 /* UalaUI.debug.xcconfig */;
@@ -12476,6 +12479,23 @@
 			};
 			name = Release;
 		};
+		8095FB89E1F5BB3A2CD4E47C8D04FFB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CA1EC995DCC83BFA7C31692E6703009 /* UalaFareUI.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
+				IBSC_MODULE = UalaFareUI;
+				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIImages-UalaFareUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = UalaFareUIImages;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		8F50D8C97C4050901F7F1D3FB737E20A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7660A90278FBCC7363A12F34E542178C /* lottie-ios.debug.xcconfig */;
@@ -12544,26 +12564,28 @@
 			};
 			name = Debug;
 		};
-		952FD3F0D563755EF02AB854EAEFFAA4 /* Release */ = {
+		91720369474DEE290D313E691F0DEC5B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C940E55239C56A5E7ECBF80E3E9874EE /* UalaFareUI.release.xcconfig */;
+			baseConfigurationReference = 724674A77B461F502F04010EF1355813 /* UalaTesting.debug.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
-				IBSC_MODULE = UalaFareUI;
-				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIImages-UalaFareUI-Info.plist";
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaTesting";
+				IBSC_MODULE = UalaTesting;
+				INFOPLIST_FILE = "Target Support Files/UalaTesting/ResourceBundle-UalaTesting-UalaTesting-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = UalaFareUIImages;
+				PRODUCT_NAME = UalaTesting;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
-		A1D9AB3A8031F4C2541FD1AA3BF91E0A /* Debug */ = {
+		9D07213F92E6850313299E9B1781A32A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F28FC73E879317638D23CC776C20F4A9 /* UalaCore.debug.xcconfig */;
+			baseConfigurationReference = 723A45561A3C8D04F672596A72D12984 /* UalaCore.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaCore";
 				IBSC_MODULE = UalaCore;
 				INFOPLIST_FILE = "Target Support Files/UalaCore/ResourceBundle-Core-UalaCore-Info.plist";
@@ -12574,7 +12596,24 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
+		};
+		A222619F3CB224214BE2B7D89705C572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B542D937BF0C2F8C6D0235C3109F889C /* UalaTesting.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaTesting";
+				IBSC_MODULE = UalaTesting;
+				INFOPLIST_FILE = "Target Support Files/UalaTesting/ResourceBundle-UalaTesting-UalaTesting-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = UalaTesting;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		A239C4719D6CE9D2DEF106633EE53A79 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -12684,22 +12723,6 @@
 			};
 			name = Release;
 		};
-		AC3BA74D1CFC43D7022B7C719867D1B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9571CE9409E47DC990C0B7441483AD16 /* UalaUI.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaUI";
-				IBSC_MODULE = UalaUI;
-				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-LottieAssets-UalaUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = LottieAssets;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F57E27A15C09A545FD5A334CC2D80B9C /* SwiftLint.release.xcconfig */;
@@ -12714,6 +12737,23 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF57C5BBAA4FCEFC2386FF786A5D713C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C940E55239C56A5E7ECBF80E3E9874EE /* UalaFareUI.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
+				IBSC_MODULE = UalaFareUI;
+				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIImages-UalaFareUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = UalaFareUIImages;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -12750,22 +12790,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B72A8266276B030C3EDFA4095C0BA824 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B542D937BF0C2F8C6D0235C3109F889C /* UalaTesting.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaTesting";
-				IBSC_MODULE = UalaTesting;
-				INFOPLIST_FILE = "Target Support Files/UalaTesting/ResourceBundle-UalaTesting-UalaTesting-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = UalaTesting;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -12876,38 +12900,6 @@
 			};
 			name = Debug;
 		};
-		BC1C7A7448F2E2F81C0AA3BD284B542F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9571CE9409E47DC990C0B7441483AD16 /* UalaUI.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaUI";
-				IBSC_MODULE = UalaUI;
-				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-Common-UalaUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = Common;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		BD0C34531E64EC62A785E258BAC74E76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 724674A77B461F502F04010EF1355813 /* UalaTesting.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaTesting";
-				IBSC_MODULE = UalaTesting;
-				INFOPLIST_FILE = "Target Support Files/UalaTesting/ResourceBundle-UalaTesting-UalaTesting-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = UalaTesting;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		BEC680E5989DB337189BCFB41895DDA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CBEA34CF8423248AADDC308A79D20BB6 /* Auth0.debug.xcconfig */;
@@ -13006,22 +12998,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C8392686B87B5F1E74A8028FB81DE917 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CA1EC995DCC83BFA7C31692E6703009 /* UalaFareUI.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
-				IBSC_MODULE = UalaFareUI;
-				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIFonts-UalaFareUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = UalaFareUIFonts;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -13199,6 +13175,23 @@
 			};
 			name = Debug;
 		};
+		D9C7F06ED344B833E99B2D525EDE702C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C940E55239C56A5E7ECBF80E3E9874EE /* UalaFareUI.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
+				IBSC_MODULE = UalaFareUI;
+				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIFonts-UalaFareUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = UalaFareUIFonts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		D9E1E904E3C4FF95E1F1DEECAC8AF58D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0A237B2C8F3BE37DC648EEE4207B640 /* Split.release.xcconfig */;
@@ -13304,15 +13297,33 @@
 			};
 			name = Debug;
 		};
-		E8C57747A13FD4DA7BF6DC718A7B5B6A /* Debug */ = {
+		E1E0A2EC583EDF85C5DC16F2D1A33F45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CA1EC995DCC83BFA7C31692E6703009 /* UalaFareUI.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
+				IBSC_MODULE = UalaFareUI;
+				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIFonts-UalaFareUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = UalaFareUIFonts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		E7475EAC6B8B93BC5E3D9501EBB7BEF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BBCF8EF76C586A8AF7D5D8E98E5BC25 /* UalaUI.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaUI";
 				IBSC_MODULE = UalaUI;
-				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-LottieAssets-UalaUI-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-Common-UalaUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = LottieAssets;
+				PRODUCT_NAME = Common;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -13354,6 +13365,23 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		EA549EBF0D54009693563E8DF06EC667 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9571CE9409E47DC990C0B7441483AD16 /* UalaUI.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaUI";
+				IBSC_MODULE = UalaUI;
+				INFOPLIST_FILE = "Target Support Files/UalaUI/ResourceBundle-Common-UalaUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = Common;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -13403,22 +13431,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EE964F2FCCD1C3409AA956831E278DA5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C940E55239C56A5E7ECBF80E3E9874EE /* UalaFareUI.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UalaFareUI";
-				IBSC_MODULE = UalaFareUI;
-				INFOPLIST_FILE = "Target Support Files/UalaFareUI/ResourceBundle-UalaFareUIFonts-UalaFareUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = UalaFareUIFonts;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -13541,8 +13553,8 @@
 		107603F9B2C50D7730AFA1F954FE17C3 /* Build configuration list for PBXNativeTarget "UalaUI-Common" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				69101941D7A8F3C847C3DB5E04A964B3 /* Debug */,
-				BC1C7A7448F2E2F81C0AA3BD284B542F /* Release */,
+				E7475EAC6B8B93BC5E3D9501EBB7BEF6 /* Debug */,
+				EA549EBF0D54009693563E8DF06EC667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -13577,8 +13589,8 @@
 		32FB0FD8C957709AAC68EDEDF8A0F910 /* Build configuration list for PBXNativeTarget "UalaUI-LottieAssets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8C57747A13FD4DA7BF6DC718A7B5B6A /* Debug */,
-				AC3BA74D1CFC43D7022B7C719867D1B2 /* Release */,
+				0FE8F0277A407F920F27610E0759CC32 /* Debug */,
+				02F9C74245A87460987EC2EE4986EAD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -13604,8 +13616,8 @@
 		3AF874A5BFE52FCE4B6607878B329EB6 /* Build configuration list for PBXNativeTarget "UalaFareUI-UalaFareUIImages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2771BA181B66E6EA23CB1E96D0537CD9 /* Debug */,
-				952FD3F0D563755EF02AB854EAEFFAA4 /* Release */,
+				8095FB89E1F5BB3A2CD4E47C8D04FFB8 /* Debug */,
+				AF57C5BBAA4FCEFC2386FF786A5D713C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -13676,8 +13688,8 @@
 		5FC1BEE625987102F2BB3D5DDE7A6FF0 /* Build configuration list for PBXNativeTarget "UalaTesting-UalaTesting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BD0C34531E64EC62A785E258BAC74E76 /* Debug */,
-				B72A8266276B030C3EDFA4095C0BA824 /* Release */,
+				91720369474DEE290D313E691F0DEC5B /* Debug */,
+				A222619F3CB224214BE2B7D89705C572 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -13739,8 +13751,8 @@
 		84A164D09060B1E464CAFCCA495B0F01 /* Build configuration list for PBXNativeTarget "UalaFareUI-UalaFareUIFonts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8392686B87B5F1E74A8028FB81DE917 /* Debug */,
-				EE964F2FCCD1C3409AA956831E278DA5 /* Release */,
+				E1E0A2EC583EDF85C5DC16F2D1A33F45 /* Debug */,
+				D9C7F06ED344B833E99B2D525EDE702C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -13811,8 +13823,8 @@
 		BB31A504AF6270395A4C32678036965E /* Build configuration list for PBXNativeTarget "UalaCore-Core" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1D9AB3A8031F4C2541FD1AA3BF91E0A /* Debug */,
-				0F2B29505CEC9333CF763A18F90CC93A /* Release */,
+				42B42227CD773A8191FBB41BFC30E954 /* Debug */,
+				9D07213F92E6850313299E9B1781A32A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
